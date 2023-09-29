@@ -1,0 +1,147 @@
+.logo{
+  width: 70px;
+  margin-right: 10px;
+}
+nav{
+  width: 100%;
+}
+nav h1{
+  color: white;
+}
+
+.nav-item a:hover{
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/*IMAGEN DEL INICIO*/
+.principal{
+  height: 450px;
+}
+
+/*TARJETAS MENU PRINCIPAL*/
+.tarjeta{
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tarjeta img {
+  width: 200px;
+  height: 300px;
+}
+
+.card-image{
+  cursor:pointer;
+}
+.tarjeta img:hover{
+  filter: drop-shadow(0 0 12px rgba(243, 242, 228, 0.71));
+}
+
+/*DETALLE*/
+.detalle{
+  margin: 30px auto;
+  width: 75%;
+  background-color: rgba(209, 200, 196, 0.121);
+  border: 1px solid white;
+  border-radius: 0%;
+}
+.botones{
+  display: flex;
+  gap: 5px;
+}
+
+/*NUEVA OBRA*/
+.nuevo{
+  display: flex;
+  width: 60%;
+  margin: 30px auto;
+  padding: 20px;
+}
+
+form{
+  width: 400px;
+}
+
+.decoracion{
+  width: 300px;
+  background-color: aqua;
+  border-radius: 0 20px 20px 0;
+}
+
+/*LOGING*/
+.formulario1, .formulario2{
+  margin: 100px auto;
+  text-align: center;
+  border: 1px solid white;
+  border-radius: 25px;
+}
+
+.formulario2{
+  margin: 50px auto;
+}
+
+.decoracionLogin img{
+  width: 300px;
+  height: 400px;
+  border-radius: 0 25px 25px 0;
+}
+.decoracion-2 img{
+  width: 300px;
+  height: 500px;
+  border-radius: 25px 0 0 25px;
+}
+
+/*FOOTER*/
+
+footer p {
+  font-size: small;
+}
+
+.logo2{
+  width: 160px;
+}
+
+.redes{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.red{
+  text-decoration: none;
+  color: white;
+}
+
+.linkedin{
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 2px 7px;
+  text-decoration: none;
+}
+
+.linkedin:hover{
+  background-color: #006296;
+}
+
+.github{
+  width: 35px;
+  margin-bottom: 10px;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+.github:hover{
+  background-color: white;
+}
+
+.contacto{
+  text-align: start;
+}
+.email, .numero{
+  width: 15px;
+}
+.derechos{
+  font-size: 10px;
+}
