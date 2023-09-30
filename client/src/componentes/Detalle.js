@@ -22,18 +22,18 @@ const Detalle = () => {
     }, [id])
 
     useEffect(() => {
-        axios.get(`http://localhost:8000/api/usurio/${creador}`)
+        axios.get("http://localhost:8000/api/usuario/" + creador) //En la terminal del navegador sale que no lo encuentra pero esta funcionando
             .then(res => {
-                setUsuario(res.data.usurio);
-                console.log(usuario)
+                setUsuario(res.data);
             })
             .catch(err => console.log(err));
     }, [creador])
 
     const borrarObra = id =>{
+        if( usuario._id === creador){ //No funciona
         axios.delete("http://localhost:8000/api/borrar/obra/" + id, {withCredentials:true})
             .then(res => {
-                let nuevaLista = obras.filter(obras._id !== id);
+                let nuevaLista = obras.filter(obras._id !== id); //Sale que algo type error
                 setObras(nuevaLista);
             })
             .catch( err => {
@@ -43,6 +43,9 @@ const Detalle = () => {
                     console.log(err)
                 }
             })
+        } else{
+            alert("No eres el creador de esta obra")
+        }
     }
 
     return(
@@ -57,7 +60,7 @@ const Detalle = () => {
                     <div className="col-md-8">
                         <div className="card-body m-2 info">
                             <h1>{obras.nombre}</h1>
-                            <h3>Creado por:{usuario}</h3>
+                            <h3>Creado por: {usuario.usuario}</h3>
                             <p>Descripcion: {obras.descripcion}</p>
                             <p>Fecha: {obras.fecha}</p>
                             <p>Tipo: {obras.categoria}</p>

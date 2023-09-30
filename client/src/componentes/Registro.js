@@ -31,7 +31,7 @@ const Registro = () => {
     return(
         <div className='col-6 d-flex formulario2'>
             <div className='decoracion-2'>
-                <img src='https://wallpapercrafter.com/th8006/1692040-digital-painting-landscape-sky-clouds-lake-boat.jpg'/>
+                <img src='https://wallpapercrafter.com/th8006/1692040-digital-painting-landscape-sky-clouds-lake-boat.jpg' alt='Paisaje de wallpapercrafter' className='img-fluid'/>
             </div>
             <form onSubmit={registro} className='p-4 m-2'>
                 <h2>Registro</h2>

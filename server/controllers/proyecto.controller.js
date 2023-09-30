@@ -3,7 +3,7 @@ const jwt = require("jsonwebtoken");
 const secret_key = "Clave secreta";
 
 module.exports.todos = (req, res) => {
-    Proyecto.find().collation({locale: "en"}).sort({fecha: -1})
+    Proyecto.find().collation({locale: "en"}).sort({fecha: 1})
         .then(obras => res.json(obras))
         .catch(err => {
             res.status(400).json(err);
@@ -56,3 +56,6 @@ module.exports.borrar = (req, res) => {
             res.status(400).json(err);
         });
 }
+
+/*usertoken_decoded = jwt.verify(req.cookies.usertoken, secret_key);
+{creador:usertoken_decoded._id},*/

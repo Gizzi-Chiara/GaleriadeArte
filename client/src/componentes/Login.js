@@ -28,37 +28,39 @@ const Login = () => {
             .catch(err => console.log(err));
     }
     return(
-        <div className=' card-dark col-6 d-flex formulario1'>
-            <form onSubmit={login} className='p-4 m-2'>
-                <h2>Iniciar Sesión</h2>
-                <div>
-                    <div className='form-group mb-3'>
-                        <label htmlFor='emailLogin'>Correo:</label>
-                        <input type='text' name='emailLogin' id='emailLogin' placeholder="ejemplo@gmail.com" className='form-control' value={emailLogin} onChange={e => setEmailLogin(e.target.value)}/>
-                        {
-                        errors.emailLogin ? <p className="text-danger">{errors.emailLogin.message}</p> : null
-                        }
-                    </div>
-                    <div className='form-group mb-3'>
-                        <label htmlFor='passwordLogin'>Contraseña:</label>
-                        <input type='password' name='passwordLogin' id='passwordLogin' placeholder="Contraseña" className='form-control' value={passwordLogin} onChange={e => setPasswordLogin(e.target.value)}/>
-                        {
-                        errors.passwordLogin ? <p className="text-danger">{errors.passwordLogin.message}</p> : null
-                        }
-                    </div>
+        <div className='fondoL'>
+            <div className=' card-dark col-6 d-flex formulario1'>
+                <form onSubmit={login} className='p-4 m-2'>
+                    <h2>Iniciar Sesión</h2>
                     <div>
-                        {errors !== "" ? <p className='text-danger'>{errors}</p> : null}
+                        <div className='form-group mb-3'>
+                            <label htmlFor='emailLogin'>Correo:</label>
+                            <input type='text' name='emailLogin' id='emailLogin' placeholder="ejemplo@gmail.com" className='form-control' value={emailLogin} onChange={e => setEmailLogin(e.target.value)}/>
+                            {
+                            errors.emailLogin ? <p className="text-danger">{errors.emailLogin.message}</p> : null
+                            }
+                        </div>
+                        <div className='form-group mb-3'>
+                            <label htmlFor='passwordLogin'>Contraseña:</label>
+                            <input type='password' name='passwordLogin' id='passwordLogin' placeholder="Contraseña" className='form-control' value={passwordLogin} onChange={e => setPasswordLogin(e.target.value)}/>
+                            {
+                            errors.passwordLogin ? <p className="text-danger">{errors.passwordLogin.message}</p> : null
+                            }
+                        </div>
+                        <div>
+                            {errors !== "" ? <p className='text-danger'>{errors}</p> : null}
+                        </div>
+                        <input type='submit' value="Iniciar Sesion" className='btn btn-primary mb-1'/>
                     </div>
-                    <input type='submit' value="Iniciar Sesion" className='btn btn-primary mb-1'/>
-                </div>
-                <p>
-                    Aún no tienes una cuenta? <Link to={"/registro"}> Registrate aquí</Link>
-                </p>
+                    <p>
+                        Aún no tienes una cuenta? <Link to={"/registro"}> Registrate aquí</Link>
+                    </p>
+                        
                     
-                
-            </form>
-            <div className='decoracionLogin'>
-                <img src='https://wallpapercrafter.com/th8006/1692030-digital-painting-night-sky-car-landscape-clouds.jpg' alt='Paisaje creado por BisBiswas'/>
+                </form>
+                <div className='decoracionLogin'>
+                    <img src='https://wallpapercrafter.com/th8006/1692030-digital-painting-night-sky-car-landscape-clouds.jpg' alt='Paisaje creado por BisBiswas'/>
+                </div>
             </div>
         </div>
     );

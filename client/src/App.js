@@ -18,7 +18,6 @@ function App() {
           <Route path='/principal' element={<Principal/>}/>
           <Route path='/nueva/obra' element={<NuevaObra/>}/>
           <Route path='/obra/:id' element={<Detalle/>}/>
-          <Route path='/usuario/:id' element={<Detalle/>}/>
           <Route path='/actualizar/obra/:id' element={<EditarObra/>}/>
         </Routes>
       </div>

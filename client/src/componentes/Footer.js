@@ -17,7 +17,7 @@ const Footer = () => {
                         </p>
                         
                         <p>
-                            maureenjimenezr@gmail.com
+                            maurenjimenezr@gmail.com
                         </p>
                         
                     </div>
@@ -39,7 +39,7 @@ const Footer = () => {
                             </Link>
                         </div>
                         <div className="text-center mb-2">
-                            <p className="derechos">2023 © maureenjr Todos los derechos reservados</p>
+                            <p className="derechos">2023 © MaureenJR Todos los derechos reservados</p>
                         </div>
                     </div>
                 </div>

@@ -57,7 +57,7 @@ const EditarObra = () => {
     return(
         <div>
             <Nav/>
-            <div className="nuevo">
+            <div className="card w-50 text-light p-5 nuevo">
                 <form onSubmit={actualizarObra}>
                     <h1>Actualizar obra</h1>
                     <div>

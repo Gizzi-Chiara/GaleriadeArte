@@ -49,10 +49,10 @@ const NuevaObra = () => {
     }
     
     return(
-        <div>
+        <div className="fondo">
             <Nav/>
-            <div className="nuevo">
-                <form onSubmit={guardarObra} className="m-3" encType="multipart/form-data">
+            <div className="card w-50 text-light p-5 nuevo">
+                <form onSubmit={guardarObra} encType="multipart/form-data">
                     <h1>Agregar nueva obra</h1>
                     <div>
                         <div>
@@ -65,14 +65,14 @@ const NuevaObra = () => {
                         <div>
                             <label>Imagen:</label>
                             <div>
-                                <input type="file" accept="imagen/png, imagen/jpeg" id="file" onChange={e => setArchivo(e.target.files[0])}/> 
+                                <input className="form-control archivo" type="file" accept="imagen/png, imagen/jpeg" id="file" onChange={e => setArchivo(e.target.files[0])}/> 
                             </div>
                             {
                                 errors.archivo ? <p className="text-danger">{errors.archivo.message}</p> : null
                             }  
                         </div>
                         <div>
-                            <label>Descripcion:</label>
+                            <label>Descripción:</label>
                             <textarea name="descripcion" className='form-control mb-3' placeholder="Descripcion" value={descripcion} onChange={e => setDescripcion(e.target.value)}/>
                             {
                                 errors.descripcion ? <p className="text-danger">{errors.descripcion.message}</p> : null
@@ -86,7 +86,7 @@ const NuevaObra = () => {
                             }
                         </div>
                         <div>
-                            <label>Categoria:  </label>
+                            <label>Categoría:  </label>
                             <select name="categoria" className='form-control mb-3' onChange={e => setCategoria(e.target.value)} defaultValue={'DEFAULT'}>
                                 <option value="DEFAULT" disabled>Seleccione una</option>
                                 <option value="Pintura">Pintura</option>
@@ -104,7 +104,10 @@ const NuevaObra = () => {
                                 errors.categoria ? <p className="text-danger">{errors.categoria.message}</p> : null
                             }
                         </div>
-                        <input type="submit" value="Guardar"/>
+                        <div className="decoracion">
+
+                        </div>
+                        <input className="btn btn-info" type="submit" value="Guardar"/>
                         
                     </div>
                 </form>

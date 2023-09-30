@@ -6,6 +6,9 @@ const EsquemaUsuario = new mongoose.Schema({
         type: String,
         required: [true, "Nombre de usuario obligatorio"]
     },
+    creador: {
+        type:String
+    },
     email:{
         type: String,
         required: [true, "Correo obligatorio"],

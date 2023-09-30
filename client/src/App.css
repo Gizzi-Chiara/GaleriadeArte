@@ -46,6 +46,9 @@ nav h1{
   border: 1px solid white;
   border-radius: 0%;
 }
+.detalle img{
+  height: 100%;
+}
 .botones{
   display: flex;
   gap: 5px;
@@ -53,20 +56,18 @@ nav h1{
 
 /*NUEVA OBRA*/
 .nuevo{
-  display: flex;
-  width: 60%;
   margin: 30px auto;
-  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.468);
+  border: 1px solid white;
 }
 
-form{
-  width: 400px;
-}
+.fondo{
+  background-repeat: no-repeat;
+  background-position: center;
 
-.decoracion{
-  width: 300px;
-  background-color: aqua;
-  border-radius: 0 20px 20px 0;
+  background-image: url(https://quiz.upsocl.com/wp-content/uploads/2013/02/port-1.jpg);
+  /*https://quiz.upsocl.com/wp-content/uploads/2013/02/port-1.jpg*/
+  
 }
 
 /*LOGING*/
@@ -83,14 +84,21 @@ form{
 
 .decoracionLogin img{
   width: 300px;
-  height: 400px;
+  height: 100%;
   border-radius: 0 25px 25px 0;
 }
 .decoracion-2 img{
   width: 300px;
-  height: 500px;
+  height: 100%;
   border-radius: 25px 0 0 25px;
 }
+
+/*.fondoL{
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url(https://madpix.com.br/wp-content/uploads/2021/04/old-black-background-grunge-texture-dark-wallpaper-blackboard-chalkboard-room-wall-scaled.jpg);
+}*/
 
 /*FOOTER*/
 
