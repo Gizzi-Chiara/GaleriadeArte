@@ -17,7 +17,7 @@ const proyectoSchema = new mongoose.Schema({
         required: [true, "Ingresa un archivo"],
         validate:{
             validator: val => /^[^\s]+(\.+(png|jpg|gif))?$/.test(val),
-            message: "Ingrese un correo válido"
+            message: "Ingrese un archivo"
         }
         */
     },
@@ -27,7 +27,6 @@ const proyectoSchema = new mongoose.Schema({
     },
     fecha: {
         type: String,
-        default: Date.now(),
         required: [true, "Por favor introduce la fecha"]
     },
     categoria:{

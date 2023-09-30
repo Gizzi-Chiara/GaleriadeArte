@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { uploadFile } from "../credenciales/firebase";
 import axios from "axios";
 import Nav from "./Nav";
+import Footer from './Footer';
 
 const EditarObra = () => {
     const {id} = useParams();
@@ -13,7 +14,7 @@ const EditarObra = () => {
     const [fecha, setFecha] = useState("");
     const [categoria, setCategoria] = useState("");
 
-    const [archivo, setArchivo] = useState(null);
+    const [archivo, setArchivo] = useState("");
 
     const [errors, setErrors] = useState({});
 
@@ -24,6 +25,7 @@ const EditarObra = () => {
             .then(res => {
                 setNombre(res.data.nombre);
                 setDescripcion(res.data.descripcion);
+                setArchivo(res.data.archivo)
                 setImagen(res.data.imagen)
                 setFecha(res.data.fecha);
                 setCategoria(res.data.categoria);
@@ -55,7 +57,7 @@ const EditarObra = () => {
             })
     }
     return(
-        <div>
+        <div className='fondo'>
             <Nav/>
             <div className="card w-50 text-light p-5 nuevo">
                 <form onSubmit={actualizarObra}>
@@ -68,10 +70,15 @@ const EditarObra = () => {
                                 errors.nombre ? <p className="text-danger">{errors.nombre.message}</p> : null
                             }   
                         </div>
-                        <label>Imagen:</label>
+                        <div>
+                            <label>Imagen:</label>
                             <div>
-                                <input type="file" onChange={e => setArchivo(e.target.files[0])}/>
+                                <input className="form-control archivo" type="file" accept="imagen/png, imagen/jpeg" id="file" onChange={e => setArchivo(e.target.files[0])}/> 
                             </div>
+                            {
+                                errors.archivo ? <p className="text-danger">{errors.archivo.message}</p> : null
+                            }  
+                        </div>
                         <div>
                             <label>Descripcion:</label>
                             <textarea name="descripcion" className='form-control mb-3' placeholder="Descripcion" value={descripcion} onChange={e => setDescripcion(e.target.value)}/>
@@ -102,10 +109,11 @@ const EditarObra = () => {
                                 <option value="Tatuaje">Tatuaje</option>
                             </select>
                         </div>
-                        <input type="submit" value="Actualizar"/>
+                        <input type="submit" className='btn btn-info' value="Actualizar"/>
                     </div>
                 </form>
             </div>
+            <Footer/>
         </div>
     );
 }

@@ -22,7 +22,7 @@ const Detalle = () => {
     }, [id])
 
     useEffect(() => {
-        axios.get("http://localhost:8000/api/usuario/" + creador) //En la terminal del navegador sale que no lo encuentra pero esta funcionando
+        axios.get(`http://localhost:8000/api/usuario/${creador}`) //En la terminal del navegador sale que no lo encuentra pero esta funcionando
             .then(res => {
                 setUsuario(res.data);
             })
@@ -30,7 +30,6 @@ const Detalle = () => {
     }, [creador])
 
     const borrarObra = id =>{
-        if( usuario._id === creador){ //No funciona
         axios.delete("http://localhost:8000/api/borrar/obra/" + id, {withCredentials:true})
             .then(res => {
                 let nuevaLista = obras.filter(obras._id !== id); //Sale que algo type error
@@ -43,9 +42,6 @@ const Detalle = () => {
                     console.log(err)
                 }
             })
-        } else{
-            alert("No eres el creador de esta obra")
-        }
     }
 
     return(

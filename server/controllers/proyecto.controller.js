@@ -42,7 +42,8 @@ module.exports.buscar = (req, res) => {
     }
     
 module.exports.actualizar = (req, res) => {
-    Proyecto.findByIdAndUpdate({_id: req.params.id}, req.body, {new:true, runValidators:true})
+    usertoken_decoded = jwt.verify(req.cookies.usertoken, secret_key);
+    Proyecto.findByIdAndUpdate({_id: req.params.id}, req.body, {new:true, runValidators:true}).collation({locale: "en"})
         .then(obra => res.json(obra))
         .catch(err => {
             res.status(400).json(err);
@@ -50,7 +51,8 @@ module.exports.actualizar = (req, res) => {
 }
 
 module.exports.borrar = (req, res) => {
-    Proyecto.deleteOne({_id: req.params.id})
+    usertoken_decoded = jwt.verify(req.cookies.usertoken, secret_key);
+    Proyecto.deleteOne({creador:usertoken_decoded._id},{_id: req.params.id}).collation({locale: "en"})
         .then(result => res.json(result))
         .catch(err => {
             res.status(400).json(err);
