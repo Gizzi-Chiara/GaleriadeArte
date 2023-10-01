@@ -61,3 +61,22 @@ module.exports.borrar = (req, res) => {
 
 /*usertoken_decoded = jwt.verify(req.cookies.usertoken, secret_key);
 {creador:usertoken_decoded._id},*/
+
+//MIS OBRAS
+
+module.exports.misObras = (req, res) => {
+    usertoken_decoded = jwt.verify(req.cookies.usertoken, secret_key);
+    Proyecto.find({creador:usertoken_decoded._id}).collation({locale: "en"}).sort({fecha: 1})
+        .then(obras => res.json(obras))
+        .catch(err => {
+            res.status(400).json(err);
+        });
+}
+
+module.exports.miObra = (req, res) => {
+    Proyecto.findOne({_id: req.params.id})
+    .then(obra => res.json(obra))
+    .catch(err => {
+            res.status(400).json(err);
+        });
+}

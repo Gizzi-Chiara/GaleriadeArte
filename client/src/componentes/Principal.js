@@ -28,8 +28,8 @@ const Principal = () =>{
             <div className="card text-bg-dark">
                 <img src="https://wallpapercrafter.com/th8006/1692032-digital-painting-landscape-night-sky-clouds-animals.jpg" className="card-img principal" alt="Animals BisBiswas"/>
                 <div className="card-img-overlay">
-                    <h5 className="card-title">Card title</h5>
-                    <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <h5 className="card-title">Bienvenidos</h5>
+                    <p className="card-text">Buscas una categoria en especifico?</p>
                     <p className="card-text"><small>Last updated 3 mins ago</small></p>
                 <div>
                     <input type="text" className="form-control w-25" placeholder="Buscar categoria" value={filtro} onChange={e => setFiltro(e.target.value)}/>

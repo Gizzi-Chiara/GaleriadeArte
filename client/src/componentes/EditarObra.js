@@ -21,7 +21,7 @@ const EditarObra = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        axios.get("http://localhost:8000/api/obra/" + id, {withCredentials:true})
+        axios.get("http://localhost:8000/api/miObra/" + id, {withCredentials:true})
             .then(res => {
                 setNombre(res.data.nombre);
                 setDescripcion(res.data.descripcion);
@@ -38,15 +38,14 @@ const EditarObra = () => {
         const result = await uploadFile(archivo);
         console.log(result)
         setImagen(result);
-
-        axios.put("http://localhost:8000/api/actualizar/obra/" + id, {
+        axios.put("http://localhost:8000/api/actualizar/miObra/" + id, {
             nombre,
             imagen:result,
             descripcion,
             fecha,
             categoria
         }, {withCredentials:true})
-            .then(res => navigate("/"))
+            .then(res => navigate("/misObras"))
             .catch( err => {
                 setErrors(err.response.data.errors)
                 if(err.response.status === 401){

@@ -13,13 +13,13 @@ const proyectoSchema = new mongoose.Schema({
     },
     archivo: {
         type: String,
-        /*
+        
         required: [true, "Ingresa un archivo"],
         validate:{
             validator: val => /^[^\s]+(\.+(png|jpg|gif))?$/.test(val),
             message: "Ingrese un archivo"
         }
-        */
+        
     },
     descripcion:{
         type: String,

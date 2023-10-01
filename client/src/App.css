@@ -4,10 +4,15 @@
 }
 nav{
   width: 100%;
+  align-items: center;
 }
 
 nav h1{
   color: white;
+}
+
+.nav-item.abierto{
+  transform: translateX(0) !important;
 }
 
 .nav-item a:hover{

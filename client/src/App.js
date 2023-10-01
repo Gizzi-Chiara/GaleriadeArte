@@ -6,6 +6,8 @@ import Login from './componentes/Login';
 import Registro from './componentes/Registro';
 import './App.css';
 import EditarObra from './componentes/EditarObra';
+import MiObraD from './componentes/MiObraD';
+import MisObras from './componentes/MisObras';
 
 function App() {
   return (
@@ -18,7 +20,9 @@ function App() {
           <Route path='/principal' element={<Principal/>}/>
           <Route path='/nueva/obra' element={<NuevaObra/>}/>
           <Route path='/obra/:id' element={<Detalle/>}/>
-          <Route path='/actualizar/obra/:id' element={<EditarObra/>}/>
+          <Route path='/detalle/:id' element={<MiObraD/>}/>
+          <Route path='/actualizar/miObra/:id' element={<EditarObra/>}/>
+          <Route path='/misObras' element={<MisObras/>}/>
         </Routes>
       </div>
     </div>
