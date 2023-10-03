@@ -50,7 +50,7 @@ const Login = () => {
                         <div>
                             {errors !== "" ? <p className='text-danger'>{errors}</p> : null}
                         </div>
-                        <input type='submit' value="Iniciar Sesion" className='btn btn-primary mb-1'/>
+                        <input type='submit' value="Iniciar Sesión" className='btn btn-primary mb-1'/>
                     </div>
                     <p>
                         Aún no tienes una cuenta? <Link to={"/registro"}> Registrate aquí</Link>
@@ -59,7 +59,7 @@ const Login = () => {
                     
                 </form>
                 <div className='decoracionLogin'>
-                    <img src='https://wallpapercrafter.com/th8006/1692030-digital-painting-night-sky-car-landscape-clouds.jpg' alt='Paisaje creado por BisBiswas'/>
+                    <img className='img-fluid' src='https://wallpapercrafter.com/th8006/1692030-digital-painting-night-sky-car-landscape-clouds.jpg' alt='Paisaje creado por BisBiswas'/>
                 </div>
             </div>
         </div>

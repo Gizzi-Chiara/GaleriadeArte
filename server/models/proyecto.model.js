@@ -8,18 +8,19 @@ const proyectoSchema = new mongoose.Schema({
     creador:{
         type: String
     },
+    usuario:{
+        type:String
+    },
     imagen: {
         type: String,
     },
     archivo: {
         type: String,
-        
-        required: [true, "Ingresa un archivo"],
         validate:{
-            validator: val => /^[^\s]+(\.+(png|jpg|gif))?$/.test(val),
+            validator: val => (/.(gif|jpe?g|tiff?|png|webp|bmp)$/i).test(val),
             message: "Ingrese un archivo"
-        }
-        
+        },
+        unique: true
     },
     descripcion:{
         type: String,
@@ -33,8 +34,11 @@ const proyectoSchema = new mongoose.Schema({
         type: String,
         required: [true, "Por favor elije una categoria"]
     },
-    favorito:{
-        type: String
+    like:{
+        type: Boolean
+    },
+    contador:{
+        type: Number
     }
 }, {timestamps: true, versionKey: false});
 

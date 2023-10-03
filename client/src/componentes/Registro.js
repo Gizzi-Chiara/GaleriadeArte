@@ -64,7 +64,7 @@ const Registro = () => {
                     }
                 </div>
                 <input type='submit' value="Crear cuenta" className='btn btn-primary mb-1'/>
-                <p> Ya tienes una cuenta? <Link to={"/login"}> Iniciar Sesion</Link></p>
+                <p> Ya tienes una cuenta? <Link to={"/login"}> Iniciar Sesión</Link></p>
             </form>
         </div>
     );

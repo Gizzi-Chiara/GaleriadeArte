@@ -1,62 +1,50 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Nav from "./Nav";
 import Footer from "./Footer";
-
+import {BsBalloonHeart, BsBalloonHeartFill} from "react-icons/bs";
 
 const Detalle = () => {
     const {id} = useParams();
     const [obras, setObras] = useState([]);
     const [usuario, setUsuario] = useState("");
     const [creador, setCreador] = useState("");
-    const navigate = useNavigate();
+
+    const [like, setLike] = useState(false);
+    const [contador, setContador] = useState(0);
+
+
+    const likes = () =>{
+        if(!like){
+            setLike(true);
+            setContador(contador + 1);
+        }else{
+            setLike(false);
+            setContador(contador - 1);
+        }
+    }
+
 
     useEffect(() => {
         axios.get("http://localhost:8000/api/obra/"+ id, {withCredentials: true})
             .then(res => {
                 setObras(res.data);
+                setLike(res.data.like)
                 setCreador(res.data.creador);
             })
             .catch(err => console.log(err));
     }, [id])
 
     useEffect(() => {
-        axios.get(`http://localhost:8000/api/usuario/${creador}`) //En la terminal del navegador sale que no lo encuentra pero esta funcionando
-            .then(res => {
-                setUsuario(res.data);
-            })
-            .catch(err => console.log(err));
-    }, [creador])
-
-    /*const borrarObra = id =>{
-        if(usuario._id === creador){
-            console.log(creador);
-            console.log(usuario._id);
-            axios.delete("http://localhost:8000/api/borrar/obra/" + id, {withCredentials:true})
+        if(creador !== ""){
+            axios.get(`http://localhost:8000/api/usuario/`+ creador) 
                 .then(res => {
-                    let nuevaLista = obras.filter(obras._id !== id); //Sale que algo type error
-                    setObras(nuevaLista);
+                    setUsuario(res.data);
                 })
-                .catch( err => {
-                    if(err.response === 401){
-                        navigate("/login")
-                    }else{
-                        console.log(err)
-                    }
-                })
-        } else{
-            alert("No eres el creador")
+                .catch(err => console.log(err));
         }
-    }*/
-
-    /*const actualizar = () => {
-        if(usuario._id === creador){
-            navigate(`/actualizar/obra/${obras._id}`)
-        } else {
-            alert("Solo el creador de esta obra puede acceder")
-        }
-    }*/
+    }, [creador])
 
     return(
         <div>
@@ -71,11 +59,17 @@ const Detalle = () => {
                         <div className="card-body m-2 info">
                             <h1>{obras.nombre}</h1>
                             <h3>Creado por: {usuario.usuario}</h3>
-                            <p>Descripcion: {obras.descripcion}</p>
+                            <p>Descripción: {obras.descripcion}</p>
                             <p>Fecha: {obras.fecha}</p>
-                            <p>Tipo: {obras.categoria}</p>
+                            <p>Categoría: {obras.categoria}</p>
                             <div className="botones">
                                 <Link to="/" className="btn btn-outline-info">Regresar</Link>
+                                <div className="d-flex likes">
+                                    {
+                                        like ? <BsBalloonHeartFill size={36} className="text-danger" onClick={likes} /> : <BsBalloonHeart size={36} onClick={likes} />
+                                    }
+                                    <p>{contador}</p>
+                                </div>
                             </div>
                         </div>
                     </div>

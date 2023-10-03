@@ -72,15 +72,15 @@ const EditarObra = () => {
                         <div>
                             <label>Imagen:</label>
                             <div>
-                                <input className="form-control archivo" type="file" accept="imagen/png, imagen/jpeg" id="file" onChange={e => setArchivo(e.target.files[0])}/> 
+                                <input className="form-control archivo mb-3" type="file" id="file" onChange={e => setArchivo(e.target.files[0])}/> 
                             </div>
                             {
                                 errors.archivo ? <p className="text-danger">{errors.archivo.message}</p> : null
                             }  
                         </div>
                         <div>
-                            <label>Descripcion:</label>
-                            <textarea name="descripcion" className='form-control mb-3' placeholder="Descripcion" value={descripcion} onChange={e => setDescripcion(e.target.value)}/>
+                            <label>Descripción:</label>
+                            <textarea name="descripcion" className='form-control mb-3' placeholder="Descripción..." value={descripcion} onChange={e => setDescripcion(e.target.value)}/>
                             {
                                 errors.descripcion ? <p className="text-danger">{errors.descripcion.message}</p> : null
                             }
@@ -93,7 +93,7 @@ const EditarObra = () => {
                             }
                         </div>
                         <div>
-                            <label>Categoria:  </label>
+                            <label>Categoría:  </label>
                             <select name="categoria" className='form-control mb-3' onChange={e => setCategoria(e.target.value)} defaultValue={'DEFAULT'}>
                                 <option value="DEFAULT" disabled>Seleccione una</option>
                                 <option value="Pintura">Pintura</option>
@@ -101,9 +101,7 @@ const EditarObra = () => {
                                 <option value="Grabado">Grabado</option>
                                 <option value="Diseño 3D">Diseño 3D</option>
                                 <option value="Diseño Digital">Diseño Digital</option>
-                                <option value="Fotografia">Fotografia</option>
-                                <option value="Comic">Comic</option>
-                                <option value="Artesania">Artesania</option>
+                                <option value="Fotografia">Fotografía</option>
                                 <option value="Animación">Animación</option>
                                 <option value="Tatuaje">Tatuaje</option>
                             </select>

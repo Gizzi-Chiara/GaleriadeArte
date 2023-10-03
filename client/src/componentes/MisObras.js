@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 import Footer from "./Footer";
 import Nav from "./Nav";
@@ -21,10 +21,11 @@ const MisObras = () => {
             })
     }, [])
 
+
     return(
         <div>
             <Nav/>
-            <h1 className="text-center">Mis Obras:</h1>
+            <h1 className="text-center mt-3">Mis Obras:</h1>
             <div className="tarjeta d-flex misObras">
                 {
                     obras.map((obra,index) => (
@@ -36,7 +37,9 @@ const MisObras = () => {
                     ))
                 }
             </div>
-            <Footer/>
+            <div>
+                <Footer/>
+            </div>
         </div>
     );
 }

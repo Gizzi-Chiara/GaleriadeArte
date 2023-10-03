@@ -31,7 +31,7 @@ module.exports.login = (req, res) => {
     Usuario.findOne({email: req.body.email})
         .then(user => {
             if(user === null){
-                res.json({error: true, message: "El correo es incorrecto"});
+                res.json({error: true, message: "Necesitas estar registrado"});
             } else{
                 bcrypt.compare(req.body.password, user.password)
                     .then(passwordValid => {
