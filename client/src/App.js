@@ -8,6 +8,7 @@ import Registro from './componentes/Registro';
 import EditarObra from './componentes/EditarObra';
 import MiObraD from './componentes/MiObraD';
 import MisObras from './componentes/MisObras';
+import Chat from './componentes/Chat';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path='/detalle/:id' element={<MiObraD/>}/>
           <Route path='/actualizar/miObra/:id' element={<EditarObra/>}/>
           <Route path='/misObras' element={<MisObras/>}/>
+          <Route path='/chat' element={<Chat/>}/>
         </Routes>
       </div>
     </div>

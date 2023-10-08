@@ -1,11 +1,9 @@
 import logo from './logo/logo.png'
 import axios from 'axios';
-import { useState } from 'react';
 import {Link, useNavigate} from 'react-router-dom';
 
 
 const Nav = () => {
-    const [abierto, setAbierto] = useState(false);
     const navigate = useNavigate();
 
     const logout = () => {

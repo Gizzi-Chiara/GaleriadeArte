@@ -1,0 +1,35 @@
+.button {
+    display: block;
+    margin: 0 auto;
+    margin-top: 50px;
+    border-radius: 6px;
+    width: 70px;
+    cursor: pointer;
+    position: fixed;
+    right: 10px;
+    bottom: 7px;
+  }
+  .button-c{
+    position: fixed;
+    display: block;
+    border-radius: 6px;
+    width: 20px;
+    margin-bottom: 8px;
+    margin-top: 10px;
+    margin-left: 315px;
+    cursor: pointer;
+    right: 8px;
+    bottom: 70px;
+  }
+  
+  
+  .modal-card {
+    position: fixed;
+    right: 140px;
+    bottom: 250px;
+    display: block;
+    margin-top: 250px;
+    width: 300px;
+    height: 300px;
+    border-radius: 5px;
+  }
