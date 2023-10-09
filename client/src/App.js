@@ -1,4 +1,7 @@
 import './App.css';
+import "./componentes/AcercaDe/AcercaDe.css";
+
+
 import {Routes, Route, Navigate} from 'react-router-dom';
 import Principal from './componentes/Principal'
 import NuevaObra from './componentes/NuevaObra';
@@ -9,6 +12,13 @@ import EditarObra from './componentes/EditarObra';
 import MiObraD from './componentes/MiObraD';
 import MisObras from './componentes/MisObras';
 import Chat from './componentes/Chat';
+
+
+
+
+import AcercaDe from './componentes/AcercaDe/AcercaDe';
+
+
 
 function App() {
   return (
@@ -26,6 +36,9 @@ function App() {
           <Route path='/actualizar/miObra/:id' element={<EditarObra/>}/>
           <Route path='/misObras' element={<MisObras/>}/>
           <Route path='/chat' element={<Chat/>}/>
+
+          <Route path="/acercaDe" element={<AcercaDe/>}/>
+
         </Routes>
       </div>
     </div>
@@ -33,3 +46,5 @@ function App() {
 }
 
 export default App;
+
+

@@ -28,6 +28,9 @@ const Nav = () => {
                         <li className="nav-item">
                             <Link className="nav-link active" to={"/misObras"}>Mis Obras</Link>
                         </li>
+                        <li className="nav-item">
+                            <Link className="nav-link active" to={"/acercaDe"}>Acerca De</Link>
+                        </li>
                     </ul>
                 </div>
                 <button onClick={logout} className="btn btn-light ms-3">Cerrar sesión</button>
