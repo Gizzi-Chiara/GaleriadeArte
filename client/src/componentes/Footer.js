@@ -12,13 +12,7 @@ const Footer = () => {
                     <div className="col-md-2 col-lg-3 col-xl-2 mx-auto mt-3">
                         <h5>Contacto</h5>
                         <hr className="mb-4"/>
-                        <p>
-                            +506 89 09 06 49
-                        </p>
-                        
-                        <p>
-                            maurenjimenezr@gmail.com
-                        </p>
+                        <Link to={"/acercaDe"}>Acerca De</Link>
                         
                     </div>
 

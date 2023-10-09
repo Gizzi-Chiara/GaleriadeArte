@@ -17,6 +17,7 @@ import Chat from './componentes/Chat';
 
 
 import AcercaDe from './componentes/AcercaDe/AcercaDe';
+import Home from './componentes/Home';
 
 
 
@@ -28,7 +29,7 @@ function App() {
           <Route path='/login' element={<Login/>}/>
           <Route path='/registro' element={<Registro/>}/>
           
-          <Route path='/' exact element={<Navigate to={"/principal"}/>}/>
+          <Route path='/' exact element={<Navigate to={"/home"}/>}/>
           <Route path='/principal' element={<Principal/>}/>
           <Route path='/nueva/obra' element={<NuevaObra/>}/>
           <Route path='/obra/:id' element={<Detalle/>}/>
@@ -38,6 +39,7 @@ function App() {
           <Route path='/chat' element={<Chat/>}/>
 
           <Route path="/acercaDe" element={<AcercaDe/>}/>
+          <Route path='/home' element={<Home/>}/>
 
         </Routes>
       </div>
