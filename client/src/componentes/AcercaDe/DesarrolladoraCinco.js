@@ -6,8 +6,10 @@ const DesarrolladorasCinco= () =>  {
     return( 
             <div className="desarrolladoras">
                 <div className="Cristhel">
-                    <h4>Cristhel Piedra</h4>
-                    <img src="https://media.licdn.com/dms/image/D4E03AQGIHlm2fIQx2w/profile-displayphoto-shrink_800_800/0/1677223994720?e=1701907200&v=beta&t=n9iH2ZixAPvryWQ7yTiqF7akbhoNfG1RkVyTuOBFN0k" width={60} />
+                    <div className="fotos">
+                        <h4>Cristhel Piedra</h4>
+                        <img src="https://media.licdn.com/dms/image/D4E03AQGIHlm2fIQx2w/profile-displayphoto-shrink_800_800/0/1677223994720?e=1701907200&v=beta&t=n9iH2ZixAPvryWQ7yTiqF7akbhoNfG1RkVyTuOBFN0k" width={60} />
+                    </div>
                     <br></br>
                     <p>Full stack developer with MERN skills (Mongoose, Express,React,Node), JavaScript lenguaje, work with Api’s, HTTML and CSS.
                         Experienced in Machine learning Data analyst, costumer service and social recruitment.

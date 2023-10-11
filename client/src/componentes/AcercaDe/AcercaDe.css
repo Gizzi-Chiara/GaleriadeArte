@@ -1,113 +1,141 @@
 .titulo {
-    margin-left: 10%;
-    color: rgba(2, 50, 90, 0.349);
-    font-family: 'Comfortaa', cursive;
+    margin-left: 2%;
+    color: white;
     font-family: 'Playfair Display', serif;
     font-family: 'Quicksand', sans-serif;
-    font-family: 'Shadows Into Light', cursive;
 }
 
 .cuerpo {
     display: flex;
     flex-direction: column;
-    font-family: Arial, sans-serif;
-    background-image: -moz-radial-gradient(green, white);
+    padding: 20px;
+    
 }
 
 .Chiara {
+    height: 500px;
     margin: 3%;
-    padding: 5%;
+    padding: 6%;
     border-radius: 8px;
     border-color: azure;
-    background-color: rgba(247, 248, 249, 0.911);
+    background-color: #212529;
+    color: white;
     display: flex;
     flex-direction: column;
     text-align: justify;
     text-align: justify;
-    color: black;
     box-shadow: 5px 5px 10px #121111;
-    background-color: rgba(173, 216, 230, 0.546);
 }
 
 .Maureen {
+    height: 500px;
     margin: 3%;
-    padding: 5%;
+    padding: 6%;
     border-radius: 8px;
-    border-color: rgba(112, 203, 203, 0.79);
-    background-color: rgba(173, 216, 230, 0.546);
+    background-color: #212529;
+    color: white;
     display: flex;
     flex-direction: column;
     text-align: justify;
-    color: black;
     box-shadow: 5px 5px 10px #121111;
 }
 
 .Monica {
+    height: 500px;
     margin: 3%;
-    padding: 5%;
+    padding: 6%;
     border-radius: 8px;
-    border-color: rgba(112, 203, 203, 0.79);
-    background-color: rgba(173, 216, 230, 0.546);
+    background-color: #212529;
+    color: white;
     display: flex;
     flex-direction: column;
     text-align: justify;
-    color: black;
     box-shadow: 5px 5px 10px #121111;
 }
 
 .Marie {
+    height: 500px;
     margin: 3%;
-    padding: 5%;
+    padding: 6%;
     border-radius: 8px;
     border-color: rgba(112, 203, 203, 0.79);
-    background-color: rgba(173, 216, 230, 0.546);
+    background-color: #212529;
+    color: white;
     display: flex;
     flex-direction: column;
     text-align: justify;
-    color: black;
     box-shadow: 5px 5px 10px #121111;
 }
 
 .Cristhel {
+    height: 500px;
     margin: 3%;
-    padding: 5%;
+    padding: 6%;
     border-radius: 8px;
     border-color: rgba(112, 203, 203, 0.79);
-    background-color: rgba(173, 216, 230, 0.546);
+    background-color: #212529;
+    color: white;
     display: flex;
     flex-direction: column;
     text-align: justify;
-    color: black;
     box-shadow: 5px 5px 10px #121111;
 }
 
 .Jenny {
+    height: 500px;
     margin: 3%;
-    padding: 5%;
+    padding: 6%;
     border-radius: 8px;
     border-color: rgba(112, 203, 203, 0.79);
-    background-color: rgba(173, 216, 230, 0.546);
+    background-color: #212529;
+    color: white;
     display: flex;
     flex-direction: column;
     text-align: justify;
-    color: black;
     box-shadow: 5px 5px 10px #121111;
 }
 
 .contenido {
-    background-color: rgba(173, 216, 230, 0.621);
+    background-color: #212529;
+    color: white;
     border-radius: 8px;
     margin: 1%;
-    padding: 1%;
-    color: black;
+    padding: 25px;
     text-align: center;
     box-shadow: 5px 5px 10px #121111;
-    font-family: 'Comfortaa', cursive;
     font-family: 'Quicksand', sans-serif;
-    font-family: 'Shadows Into Light', cursive;
-
+    text-align: justify;
 }
 
-.app {
-    background-image: url(https://i.etsystatic.com/21960027/r/il/2533b7/2601652113/il_1588xN.2601652113_25cv.jpg)
+.fotos{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.desarrolladoras1{
+    margin-left: 30px;
+}
+
+.top_acerca{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pagprinc{
+    text-decoration: none;
+    color: white;
+    margin-right: 20px;
+    font-size: 18px;
+}
+
+.pagprinc:hover{
+    text-decoration: none;
+    color: white;
+    font-size: 19px;
+    text-decoration: underline;
 }

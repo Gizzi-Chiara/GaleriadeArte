@@ -51,6 +51,7 @@
 .tarjeta img {
   width: 200px;
   height: 300px;
+  object-fit: cover;
 }
 
 .card-image{
@@ -67,6 +68,7 @@
   border: 1px solid rgb(249, 250, 250);
   background-color: rgba(40, 44, 48, 0.409);
   border-radius: 5px;
+  padding: 15px;
 }
 
 /*DETALLE*/

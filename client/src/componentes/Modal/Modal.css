@@ -6,8 +6,8 @@
     width: 70px;
     cursor: pointer;
     position: fixed;
-    right: 10px;
-    bottom: 7px;
+    right: 15px;
+    bottom: 15px;
   }
   .button-c{
     position: fixed;
@@ -18,15 +18,15 @@
     margin-top: 10px;
     margin-left: 315px;
     cursor: pointer;
-    right: 8px;
-    bottom: 70px;
+    right: 15px;
+    bottom: 80px;
   }
   
   
   .modal-card {
     position: fixed;
-    right: 140px;
-    bottom: 250px;
+    right: 145px;
+    bottom: 255px;
     display: block;
     margin-top: 250px;
     width: 300px;
