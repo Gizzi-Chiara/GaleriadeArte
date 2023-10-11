@@ -65,7 +65,7 @@ function App() {
           <Route path='/museos/ver/popular' element={<Popular/>}/>
           <Route path='/museos/ver/orosi' element={<Orosi/>}/>
           <Route path='/museos/ver/ninos' element={<Ninos/>}/>
-        
+
         </Routes>
       </div>
     </div>

@@ -19,8 +19,7 @@ const proyectoSchema = new mongoose.Schema({
         validate:{
             validator: val => (/.(gif|jpe?g|tiff?|png|webp|bmp)$/i).test(val),
             message: "Ingrese un archivo"
-        },
-        unique: true
+        }
     },
     descripcion:{
         type: String,
