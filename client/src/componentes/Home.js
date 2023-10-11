@@ -33,11 +33,11 @@ const Home = () => {
     }
     return (
         <div>
-            <nav className="navbar navbar-expand-lg bg-dark p-1" data-bs-theme="dark">
+            <nav className="navbar navbar-expand-lg bg-dark p-1 " data-bs-theme="dark">
                 <div className="container">
                     <img className='logo' src={logo} alt='logo' />
                     <h2>Galería de Arte</h2>
-                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                    <div className="collapse navbar-collapse " id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0 ms-3 lista">
                             <li className="nav-item">
                                 <Link className="nav-link active" to={"/"}>Inicio</Link>
@@ -50,45 +50,53 @@ const Home = () => {
                     <button onClick={sesion} className="btn btn-light ms-3">Iniciar sesión</button>
                 </div>
             </nav>
-            <div className="p-5 mt-5">
+            <div className="p-5 mt-5 carr">
                 <Carousel responsive={responsive}>
                     <div className="flip-box">
                         <div className="flip-box-inner">
-                            <div className="flip-box-front">
-                                <img className="homeCarrusel" src="https://images.unsplash.com/photo-1615819895109-2610db394132?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1926&q=80" alt="Prueba"/>
+                            <div className="flip-box-front cards_home">
+                                <img className="homeCarrusel" src="https://images.unsplash.com/photo-1615819895109-2610db394132?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1926&q=80" alt="Prueba" />
+                                <div class="centered">Arte</div>
                             </div>
-                            <div className="flip-box-back">
-                                <Link to={"/principal"}>Arte</Link>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="flip-box">
-                        <div className="flip-box-inner">
-                            <div className="flip-box-front">
-                                <img className="homeCarrusel" src="https://images.unsplash.com/photo-1564399579883-451a5d44ec08?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1937&q=80" alt="Prueba"/>
-                            </div>
-                            <div className="flip-box-back">
-                                <Link to={"/museos"}>Museos</Link>
+                            <div className="flip-box-back card_back">
+                                <p>Galería de Arte con diferentes categorieas donde podrás añadir tus propias obras</p>
+                                <Link to={"/principal"} className="tarjeta_name">Ir →</Link>
                             </div>
                         </div>
                     </div>
                     <div className="flip-box">
                         <div className="flip-box-inner">
-                            <div className="flip-box-front">
-                                <img className="homeCarrusel" src="https://images.unsplash.com/photo-1531058020387-3be344556be6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Prueba"/>
+                            <div className="flip-box-front cards_home">
+                                <img className="homeCarrusel" src="https://images.unsplash.com/photo-1564399579883-451a5d44ec08?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1937&q=80" alt="Prueba" />
+                                <div class="centered">Museos</div>
                             </div>
-                            <div className="flip-box-back">
-                                <Link to={"/actividades"}>Próximas actividades artísticas</Link>
+                            <div className="flip-box-back card_back">
+                                <label>Visita los diferentes museso de Costa Rica</label>
+                                <Link to={"/museos"} className="tarjeta_name">Ir →</Link>
                             </div>
                         </div>
                     </div>
                     <div className="flip-box">
                         <div className="flip-box-inner">
-                            <div className="flip-box-front">
-                                <img className="homeCarrusel" src="https://images.unsplash.com/photo-1445258975206-cb4c5d8031d1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1932&q=80" alt="Prueba"/>
+                            <div className="flip-box-front cards_home">
+                                <img className="homeCarrusel" src="https://images.unsplash.com/photo-1531058020387-3be344556be6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Prueba" />
+                                <div class="centered">Actividades</div>
                             </div>
-                            <div className="flip-box-back">
-                                <Link to={"/inspiracion"}>Inspiracion</Link>
+                            <div className="flip-box-back card_back">
+                                <label>Anímate a ver el arte en persona</label>
+                                <Link to={"/actividades"} className="tarjeta_name">Ir →</Link>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="flip-box">
+                        <div className="flip-box-inner">
+                            <div className="flip-box-front cards_home">
+                                <img className="homeCarrusel" src="https://images.unsplash.com/photo-1445258975206-cb4c5d8031d1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1932&q=80" alt="Prueba" />
+                                <div class="centered">Acerca de</div>
+                            </div>
+                            <div className="flip-box-back card_back">
+                                <label>¿Quiénes somos?</label>
+                                <Link to={"/acercaDe"} className="tarjeta_name">Ir →</Link>
                             </div>
                         </div>
                     </div>

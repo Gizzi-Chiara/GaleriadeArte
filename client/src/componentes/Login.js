@@ -30,7 +30,7 @@ const Login = () => {
     return(
         <div className='fondoL'>
             <div className=' card-dark col-6 d-flex formulario1'>
-                <form onSubmit={login} className='p-4 m-2'>
+                <form onSubmit={login} className='p-4 m-2 login_izq'>
                     <h2>Iniciar Sesión</h2>
                     <div>
                         <div className='form-group mb-3'>
@@ -59,7 +59,7 @@ const Login = () => {
                         <Link className='linkLogin' to={"/registro"}> Registrate aquí</Link>
                     </div>
                     <div>
-                        <Link className='linkLogin'  to={"/home"}>Regresar a la pagina principal</Link>
+                        <Link className='linkLogin' to={"/home"}>Regresar a la pagina principal</Link>
                     </div>
                 </form>
                 <div className='decoracionLogin'>

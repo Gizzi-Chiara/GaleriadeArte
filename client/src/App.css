@@ -9,6 +9,20 @@
   font-weight: bold;
 }
 
+.acercade{
+  color: white;
+  font-size: 15px;
+}
+
+.acercade:hover{
+  color: white;
+  font-size: 17px;
+}
+
+.mt-3{
+  width: 299px;
+}
+
 /*IMAGEN DEL INICIO*/
 .principal{
   height: 450px;
@@ -25,6 +39,7 @@
 .buscador:hover{
   filter: drop-shadow(0 0 12px rgba(243, 242, 241, 0.155));
 }
+
 
 /*TARJETAS MENU PRINCIPAL*/
 
@@ -101,9 +116,22 @@
   border-radius: 25px;
 }
 
+.formulario1{
+  width: 55%;
+}
+
 .linkLogin{
   font-size: 15px;
-  color: white;
+}
+
+.login_izq{
+  display: flex;
+  flex: 1.6;
+  flex-direction: column;
+}
+
+.linkLogin:hover{
+  font-size: 16px;
 }
 
 .formulario2{
@@ -111,7 +139,7 @@
 }
 
 .decoracionLogin img{
-  width: 300px;
+  width: 495px;
   height: 100%;
   border-radius: 0 25px 25px 0;
 }

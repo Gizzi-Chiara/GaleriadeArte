@@ -33,7 +33,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #cfcfcd62;
+    background-color: #4aeae462;
     transform: rotateY(180deg);
 }
 
@@ -45,4 +45,34 @@
     display: flex;
     gap: 10px;
     border-radius: 10px;
+    opacity: 0.8;
+}
+
+.carr {
+    margin-left: 65px;
+}
+
+.cards_home {
+    text-align: center;
+    color: white;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+}
+
+.tarjeta_name{
+    font-size: 17px;
+    color: white;
+    margin-top: 10px;
+}
+
+.card_back{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
 }
