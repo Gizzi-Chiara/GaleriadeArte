@@ -67,32 +67,32 @@ const NuevaObra = () => {
                         <div>
                             <label>Nombre de la obra:</label>
                             <input type="text" name="nombre" className='form-control mb-3' placeholder="Nombre de la obra" onChange={e => setNombre(e.target.value)}/>
-                            {/* {
+                            {
                                 errors.nombre ? <p className="text-danger">{errors.nombre.message}</p> : null
-                            }  */}  
+                            }   
                         </div>
                         <div>
                             <label>Imagen:</label>
                             <div>
                                 <input className="form-control archivo mb-3" type="file" id="file" onChange={e => setArchivo(e.target.files[0])}/> 
                             </div>
-                            {/* {
+                            {
                                 errors.archivo ? <p className="text-danger">{errors.archivo.message}</p> : null
-                            }  */} 
+                            } 
                         </div>
                         <div>
                             <label>Descripción:</label>
                             <textarea name="descripcion" className='form-control mb-3' placeholder="Descripción..." value={descripcion} onChange={e => setDescripcion(e.target.value)}/>
-                            {/* {
+                            {
                                 errors.descripcion ? <p className="text-danger">{errors.descripcion.message}</p> : null
-                            } */}
+                            }
                         </div>
                         <div>
                             <label>Fecha de creación:  </label>
                             <input type="date" className='form-control mb-3' name="fecha" value={fecha} onChange={e => setFecha(e.target.value)}/>
-                            {/* {
+                            {
                                 errors.fecha ? <p className="text-danger">{errors.fecha.message}</p> : null
-                            } */}
+                            }
                         </div>
                         <div>
                             <label>Categoría:  </label>
@@ -107,9 +107,9 @@ const NuevaObra = () => {
                                 <option value="Animación">Animación</option>
                                 <option value="Tatuaje">Tatuaje</option>
                             </select>
-                            {/* {
+                            {
                                 errors.categoria ? <p className="text-danger">{errors.categoria.message}</p> : null
-                            } */}
+                            }
                         </div>
                         <div className="decoracion">
 
