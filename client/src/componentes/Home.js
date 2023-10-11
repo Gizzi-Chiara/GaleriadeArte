@@ -1,9 +1,8 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import "./HomeCarrusel.css"
-import Nav from "./Nav";
-import { Link } from "react-router-dom";
-
+import logo from './logo/logo.png'
+import { Link, useNavigate } from "react-router-dom";
 
 const responsive = {
     superLargeDesktop: {
@@ -27,9 +26,30 @@ const responsive = {
 
 
 const Home = () => {
+
+    const navigate = useNavigate();
+    const sesion = () => {
+        navigate("/login");
+    }
     return (
         <div>
-            <Nav/>
+            <nav className="navbar navbar-expand-lg bg-dark p-1" data-bs-theme="dark">
+                <div className="container">
+                    <img className='logo' src={logo} alt='logo' />
+                    <h2>Galería de Arte</h2>
+                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul className="navbar-nav me-auto mb-2 mb-lg-0 ms-3 lista">
+                            <li className="nav-item">
+                                <Link className="nav-link active" to={"/"}>Inicio</Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link className="nav-link active" to={"/misObras"}>Mis Obras</Link>
+                            </li>
+                        </ul>
+                    </div>
+                    <button onClick={sesion} className="btn btn-light ms-3">Iniciar sesión</button>
+                </div>
+            </nav>
             <div className="p-5 mt-5">
                 <Carousel responsive={responsive}>
                     <div className="flip-box">
@@ -58,7 +78,7 @@ const Home = () => {
                                 <img className="homeCarrusel" src="https://images.unsplash.com/photo-1531058020387-3be344556be6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Prueba"/>
                             </div>
                             <div className="flip-box-back">
-                                <Link to={"/eventos"}>Eventos</Link>
+                                <Link to={"/actividades"}>Próximas actividades artísticas</Link>
                             </div>
                         </div>
                     </div>
@@ -72,7 +92,6 @@ const Home = () => {
                             </div>
                         </div>
                     </div>
-            
                 </Carousel>
             </div>
         </div>

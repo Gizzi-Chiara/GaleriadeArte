@@ -7,7 +7,7 @@ module.exports.registro = (req, res) => {
     const user = new Usuario(req.body);
     user.save()
         .then(usuario => {
-            /*res.json(usuario);*/
+            /res.json(usuario);/
 
             const payload = {
                 _id: user._id

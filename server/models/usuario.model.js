@@ -49,5 +49,3 @@ EsquemaUsuario.pre('save', function(next) {
 
 const Usuario = mongoose.model("usuarios", EsquemaUsuario);
 module.exports = Usuario;
-
-

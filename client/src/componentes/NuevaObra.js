@@ -34,7 +34,7 @@ const NuevaObra = () => {
             categoria
         }, {withCredentials: true})
             .then(res => {
-                navigate("/")
+                navigate("/principal")
                 setArchivo(null);
                 setImagen("");
             })

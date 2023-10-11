@@ -52,11 +52,15 @@ const Login = () => {
                         </div>
                         <input type='submit' value="Iniciar Sesión" className='btn btn-primary mb-1'/>
                     </div>
-                    <p>
-                        Aún no tienes una cuenta? <Link to={"/registro"}> Registrate aquí</Link>
+                    <p className='mt-3'>
+                        Aún no tienes una cuenta? 
                     </p>
-                        
-                    
+                    <div>
+                        <Link className='linkLogin' to={"/registro"}> Registrate aquí</Link>
+                    </div>
+                    <div>
+                        <Link className='linkLogin'  to={"/home"}>Regresar a la pagina principal</Link>
+                    </div>
                 </form>
                 <div className='decoracionLogin'>
                     <img className='img-fluid' src='https://wallpapercrafter.com/th8006/1692030-digital-painting-night-sky-car-landscape-clouds.jpg' alt='Paisaje creado por BisBiswas'/>

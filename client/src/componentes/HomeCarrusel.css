@@ -46,14 +46,3 @@
     gap: 10px;
     border-radius: 10px;
 }
-
-a{
-    text-decoration: none;
-    color: black;
-    font-size: 30px;
-}
-
-a:hover{
-    text-decoration: underline;
-    font-size: 35px;
-}
