@@ -29,6 +29,9 @@ const Nav = () => {
                             <Link className="nav-link active" to={"/misObras"}>Mis Obras</Link>
                         </li>
                         <li className="nav-item">
+                            <Link className="nav-link active" to={"/actividades"}>Eventos</Link>
+                        </li>
+                        <li className="nav-item">
                             <Link className="nav-link active" to={"/acercaDe"}>Acerca De</Link>
                         </li>
                     </ul>
