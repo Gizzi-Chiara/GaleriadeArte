@@ -55,9 +55,9 @@ const Chat = () => {
                     {
                         id: "seleccion",
                         options: [
-                            { value: "pinturas", label: "Pinturas", trigger: "7A" },
-                            { value: "mapa", label: "Lugares de interés", trigger: "7B" },
-                            { value: "monumentos", label: "Monumentos", trigger: "7C" },
+                            { value: "pinturas", label: "Mis obras", trigger: "7A" },
+                            { value: "mapa", label: "Museos", trigger: "7B" },
+                            { value: "monumentos", label: "Actividades", trigger: "7C" },
                         ]
                     },
                     {
