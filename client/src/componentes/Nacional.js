@@ -4,6 +4,7 @@ import { Map, Marker, Popup } from 'react-map-gl';
 import PinImagen from './imagenes/wing.png';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import logo from './logo/logo.png'
+import Footer from './Footer';
 
 const Nacional = () => {
 
@@ -28,7 +29,7 @@ const Nacional = () => {
     });
 
     return (
-        <div className=''>
+        <div>
             <div className='lista_actividades'>
                 <div className="navbar navbar-expand-lg bg-dark p-1" data-bs-theme="dark">
                     <div className='nav_act'>
@@ -42,58 +43,59 @@ const Nacional = () => {
                     </div>
                 </div>
             </div>
-            <div className='informacionPrincipal'>
+            <div className='todo_museo'>
                 <h1 className='nombre_museo'>{museo.museo}</h1>
-                <img src={museo.imagen} alt='museo' className='museo_foto'/>
-                <div className='museo_bottom'>
-                    <h2>Tipo:</h2>
-                    <p>{museo.tipo}</p>
-                    <h2>Encargado:</h2>
-                    <p>{museo.encargado}</p>
-                </div>
-                <h2>Horario:</h2>
-                <p>{museo.horario}</p>
-                <h2>Página web:</h2>
-                <p>{museo.paginaweb}</p>
-                <h2>Lugar:</h2>
-                <p>{museo.lugar}</p>
-                <p>Descripcion:
-                    {museo.descripcion}
-                </p>
-            </div>
-            <h2>Lugar:</h2>
-            <div>
-                <div id='map'>
-                    <Map
-                        mapboxAccessToken='pk.eyJ1IjoibW9uaWNhbHVjaWExOTk0IiwiYSI6ImNsbmkwNHVvczFiODkybG1zcmFoMXQ1eHIifQ.X4HfG7hokZo_mNBg3Dxs3Q'
-                        {...viewState}
-                        onMove={evt => setViewState(evt.viewState)}
-                        mapStyle="mapbox://styles/mapbox/streets-v9"
-                        style={{ width: 400, height: 350 }}
-                    >
-                        <div id='marcador'>
-                            <Marker longitude={museo.long} latitude={museo.lat} offsetLeft={-20} offsetTop={-10}>
-                                <img src={PinImagen} style={{ fontSize: viewState.zoom * 5 }} />
-                            </Marker>
-                        </div>
+                <div className='body_museo'>
+                    <div className='informacionPrincipal'>
                         <div>
-                            {showPopup && (
-                                <Popup longitude={museo.long} latitude={museo.lat}
-                                    anchor="left"
-                                    onClose={() => setShowPopup(false)}>
-                                    <div className='card'>
-                                        <label className='cardTitle'>Museo: </label>
-                                        <h4 className='cardDesc museo'>{museo.museo}</h4>
-                                        <label className='cardTitle'>Horario: </label>
-                                        <h4 className='cardDesc'>{museo.horario}</h4>
-                                        <label className='cardTitle'>Tipo: </label>
-                                        <h4 className='cardDesc'>{museo.tipo}</h4>
-                                    </div>
-                                </Popup>)}
+                            <img src={museo.imagen} alt='museo' className='museo_foto' />
                         </div>
-                    </Map>
+                        <div className='museo_bottom'>
+                            <p><span>Tipo:</span>{museo.tipo}</p>
+                            <p><span>Encargado:</span>{museo.encargado}</p>
+                            <p><span>Horario:</span>{museo.horario}</p>
+                            <p><span>Página web:</span>{museo.paginaweb}</p>
+                            <p><span>Ubicación:</span>{museo.lugar}</p>
+                            <p><span>Descripción:</span><br></br>
+                                {museo.descripcion}
+                            </p>
+                        </div>
+                    </div>
+                    <div className='informacionPrincipal'>
+                        <div id='map'>
+                            <Map
+                                mapboxAccessToken='pk.eyJ1IjoibW9uaWNhbHVjaWExOTk0IiwiYSI6ImNsbmkwNHVvczFiODkybG1zcmFoMXQ1eHIifQ.X4HfG7hokZo_mNBg3Dxs3Q'
+                                {...viewState}
+                                onMove={evt => setViewState(evt.viewState)}
+                                mapStyle="mapbox://styles/mapbox/streets-v9"
+                                style={{ width: 400, height: 350 }}
+                            >
+                                <div id='marcador'>
+                                    <Marker longitude={museo.long} latitude={museo.lat} offsetLeft={-20} offsetTop={-10}>
+                                        <img src={PinImagen} style={{ fontSize: viewState.zoom * 5 }} />
+                                    </Marker>
+                                </div>
+                                <div>
+                                    {showPopup && (
+                                        <Popup longitude={museo.long} latitude={museo.lat}
+                                            anchor="left"
+                                            onClose={() => setShowPopup(false)}>
+                                            <div className='card'>
+                                                <label className='cardTitle'>Museo: </label>
+                                                <h4 className='cardDesc museo'>{museo.museo}</h4>
+                                                <label className='cardTitle'>Horario: </label>
+                                                <h4 className='cardDesc'>{museo.horario}</h4>
+                                                <label className='cardTitle'>Tipo: </label>
+                                                <h4 className='cardDesc'>{museo.tipo}</h4>
+                                            </div>
+                                        </Popup>)}
+                                </div>
+                            </Map>
+                        </div>
+                    </div>
                 </div>
             </div>
+            <Footer/>
         </div>
 
     )

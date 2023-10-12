@@ -356,11 +356,14 @@ footer p {
 /*museo*/
 .informacionPrincipal{
   padding: 30px;
+  display: flex;
+  flex-direction: column;
 }
 .nombre_museo{
   display: flex;
   flex-direction: row;
   justify-content: center;
+  padding-top: 20px;
 }
 
 .museo_foto{
@@ -368,7 +371,42 @@ footer p {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin: 0 auto;
   margin-top: 15px;
-  width: 400px;
+  width: 450px;
+}
+
+.body_museo{
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #1a768668;
+  margin-top: 20px;
+  border-radius: 15px;
+  padding-bottom: 20px;
+}
+
+span{
+  font-weight: bold;
+  text-decoration: underline;
+  margin-right: 10px;
+}
+
+.spanub{
+  margin-bottom: 40px;
+}
+
+.todo_museo{
+  background-color: rgb(15, 14, 14);
+}
+
+.museo_bottom{
+  margin-top: 30px;
+  width: 90%;
+}
+
+#map{
+  margin-top: 200px;
 }
