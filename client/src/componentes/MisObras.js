@@ -106,8 +106,8 @@ const MisObras = () => {
                                         value={newFoto}
                                         onChange={handleFotoChange}
                                     />
-                                    <button className="btn btn-primary mt-2" onClick={handleGuardarNuevaFoto}>
-                                        Guardar Foto URL
+                                    <button className="btn btn-outline-info mt-2" onClick={handleGuardarNuevaFoto}>
+                                        Guardar
                                     </button>
                                 </>
                             ) : (
@@ -115,11 +115,12 @@ const MisObras = () => {
                                     {foto ? (
                                         <>
                                             <img src={foto} alt="Foto de Perfil" className="img-fluid imagen-perfil" />
-                                            <i className="bi bi-gear editar-icon iconofoto" onClick={handleActualizarFoto}></i>
+                                            <div className="icon-container"><i className="bi bi-gear editar-icon iconofoto" onClick={handleActualizarFoto}>Actualizar Avatar</i></div>
+                                            
                                         </>
                                     ) : (
                                         <>
-                                            <button className="btn btn-primary" onClick={handleAgregarFoto}>Agregar Foto de Perfil URL</button>
+                                            <button className="btn btn-outline-info mt-2" onClick={handleAgregarFoto}>Agregar Foto</button>
                                         </>
                                     )}
                                 </>
@@ -134,7 +135,7 @@ const MisObras = () => {
                                         value={descripcion}
                                         onChange={(e) => setDescripcion(e.target.value)}
                                     />
-                                    <button className="btn btn-primary mt-2" onClick={handleGuardarDescripcion}>
+                                    <button className="btn btn-outline-info mt-2" onClick={handleGuardarDescripcion}>
                                         Guardar
                                     </button>
                                 </>
@@ -146,7 +147,8 @@ const MisObras = () => {
                                             <p className="card-text">{descripcion}</p>
                                         </div>
                                     </div>
-                                    <i className="bi bi-gear editar-icon" onClick={handleEditarDescripcion}></i>
+                                    <div className="icon-container"><i className="bi bi-gear editar-icon iconofoto" onClick={handleEditarDescripcion}>Actualizar Descripcion</i></div>
+                                    
                                 </>
                             )}
                         </div>

@@ -437,17 +437,26 @@ span {
 }
 
 .imagen-perfil {
-  max-width: 200px;
-  /* Cambia el tamaño según tus preferencias */
-  max-height: 150px;
-  margin-left: 50px;
+  max-width: 150px;
+  margin: 0 auto; 
+  display: block; 
 }
 
 .descripcion {
-  margin-top: 90px;
-  margin-left: 50px;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%; 
+
 }
 
+
 .iconofoto {
-  margin-left: 60px;
+  cursor: pointer
+}
+
+.icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
 }
