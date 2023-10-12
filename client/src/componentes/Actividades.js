@@ -90,16 +90,17 @@ const Actividades = () => {
                 </div>
                 <table className='actividades_tabla'>
                     <div className='tabla_tabla'>
-                        <thead>
+                        <thead className='tabla_content'>
                             <tr>
-                                <th className='columna_a'>Actividad</th>
-                                <th className='columnas'>Tipo</th>
-                                <th className='columnas'>Lugar</th>
-                                <th className='columnas'>Horario</th>
-                                <th className='columnas'>Fecha</th>
+                                <th className='columna_a top'>Actividad</th>
+                                <th className='columnas top'>Tipo</th>
+                                <th className='columnas top'>Lugar</th>
+                                <th className='columnas top'>Horario</th>
+                                <th className='columnas top'>Fecha</th>
+                                <th  className='columnas top'></th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody className='tabla_content'>
                             {
                                 actividadesImprimir.map((actividad, index) => (
                                     <tr key={index}>

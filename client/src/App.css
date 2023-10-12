@@ -226,6 +226,11 @@ footer p {
 .actividadesLink{
   color: white;
   text-decoration: none;
+  width: 30px;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: rgba(128, 87, 128, 0.707);
+  font-size: 15px;
 }
 
 .actividadesLink:hover{
@@ -288,15 +293,82 @@ footer p {
 .tabla_tabla{
   padding: 30px;
   font-size: 18px;
-  font-weight: bold;
 }
 
 .columnas{
-  width: 15%;
+  width: 16%;
 }
 
 .columna_a{
   width: 40%;
   text-wrap: wrap;
-  text-align: justify;
+}
+
+.top{
+  text-decoration: underline;
+  font-size: 20px;
+}
+
+.tabla_content{
+  display: flex;
+  gap: 25px;
+  flex-direction: column;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+
+/*museos*/
+.museos_centro{
+  padding: 70px;
+  background-image: url("./componentes/imagenes/museos2.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  font-size: 16px;
+}
+
+.museos_tabla{
+  height: 90%;
+  background-color: rgba(48, 49, 49, 0.533);
+  border-radius: 10px;
+  margin: 0 auto;
+  padding: 25px;
+  color: rgb(230, 225, 219);
+}
+
+.museos_top{
+  font-size: 23px;
+  text-decoration: underline;
+  margin-bottom: 20px;
+}
+
+.museos_body{
+  margin-top: 20px;
+}
+
+.columna_b{
+  width: 13%;
+  text-wrap: wrap;
+}
+
+/*museo*/
+.informacionPrincipal{
+  padding: 30px;
+}
+.nombre_museo{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.museo_foto{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 15px;
+  width: 400px;
 }
