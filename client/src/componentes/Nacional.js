@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Map, Marker, Popup } from 'react-map-gl';
 import PinImagen from './imagenes/wing.png';
 import 'mapbox-gl/dist/mapbox-gl.css';
-import logo from './logo/logo.png'
+import logo from './logo/logo.png';
 import Footer from './Footer';
 
 const Nacional = () => {

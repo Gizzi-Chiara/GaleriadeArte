@@ -22,7 +22,14 @@ const EsquemaUsuario = new mongoose.Schema({
         type: String,
         required: [true, "Contraseña obligatoria"],
         minlength: [8, "La contraseña debe terner al menos 8 caracteres"]
+    }, 
+    foto: {
+        type: String,
+    },
+    descripcion:{
+        type: String
     }
+    
 }, {timestamps: true, versionKey: false})
 
 //No gusradar en DB

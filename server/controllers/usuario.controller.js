@@ -76,3 +76,32 @@ module.exports.usuario = (req, res) => {
             res.status(400).json(err);
         });
 }
+
+module.exports.update_foto = (req, res) => {
+    usertoken_decoded = jwt.verify(req.cookies.usertoken, secret_key);
+    // Actualizar la imagen de perfil en la base de datos para el usuario actual
+    Usuario.findOneAndUpdate({ _id: usertoken_decoded._id }, { $set: {foto:  req.body.foto} }, { new: true })
+        .then(perfil => res.json(perfil))
+        .catch(err => {
+            res.status(400).json(err);
+        });
+};
+
+module.exports.update_descripcion = (req, res) => {
+    usertoken_decoded = jwt.verify(req.cookies.usertoken, secret_key);
+    // Actualizar la descripción en la base de datos para el usuario actual
+    Usuario.findOneAndUpdate({ _id: usertoken_decoded._id }, { $set: {descripcion:  req.body.descripcion} }, { new: true })
+        .then(perfil => res.json(perfil))
+        .catch(err => {
+            res.status(400).json(err);
+        });
+};
+///usuario
+module.exports.info_sesion = (req, res) => {
+    usertoken_decoded = jwt.verify(req.cookies.usertoken, secret_key);
+    Usuario.findOne({_id: usertoken_decoded._id})
+        .then(perfil => res.json(perfil))
+        .catch(err => {
+            res.status(400).json(err);
+        });
+}
