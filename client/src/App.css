@@ -23,7 +23,7 @@
   width: 299px;
 }
 
-/IMAGEN DEL INICIO/
+/*IMAGEN DEL INICIO*/
 .principal {
   height: 450px;
 }
@@ -41,7 +41,7 @@
 }
 
 
-/TARJETAS MENU PRINCIPAL/
+/*TARJETAS MENU PRINCIPAL*/
 
 .tarjeta {
   flex-wrap: wrap;
@@ -62,7 +62,7 @@
   filter: drop-shadow(0 0 12px rgba(243, 242, 228, 0.71));
 }
 
-/MIS OBRAS/
+/*MIS OBRAS*/
 .misObras {
   margin: 30px;
   height: 100vh;
@@ -72,7 +72,7 @@
   padding: 15px;
 }
 
-/DETALLE/
+/*DETALLE*/
 .detalle {
   margin: 60px auto;
   width: 75%;
@@ -94,7 +94,7 @@
   cursor: pointer;
 }
 
-/NUEVA OBRA/
+/*NUEVA OBRA*/
 .nuevo {
   margin: 30px auto;
   background-color: rgba(0, 0, 0, 0.468);
@@ -113,7 +113,7 @@
 
 }
 
-/LOGING/
+/*LOGING*/
 .formulario1,
 .formulario2 {
   margin: 100px auto;
@@ -163,7 +163,7 @@
   background-image: url(https://madpix.com.br/wp-content/uploads/2021/04/old-black-background-grunge-texture-dark-wallpaper-blackboard-chalkboard-room-wall-scaled.jpg);
 }*/
 
-/FOOTER/
+/*FOOTER*/
 
 footer p {
   font-size: small;
@@ -220,7 +220,7 @@ footer p {
   font-size: 10px;
 }
 
-/miobra/
+/*miobra*/
 .footer_obras {
   left: 0;
   bottom: 0;
@@ -229,7 +229,7 @@ footer p {
   margin-top: 6%;
 }
 
-/lista actividades/
+/*lista actividades*/
 
 .actividadesLink {
   color: white;
@@ -338,7 +338,7 @@ footer p {
 }
 
 
-/museos/
+/*museos*/
 .museos_centro {
   padding: 70px;
   background-image: url("./componentes/imagenes/museos2.jpg");
@@ -373,7 +373,7 @@ footer p {
   text-wrap: wrap;
 }
 
-/museo/
+/*museo*/
 .informacionPrincipal {
   padding: 30px;
   display: flex;
@@ -473,4 +473,79 @@ span {
 
 .tarjetaVer{
   width: 130px;
+}
+
+/*perfil*/
+.imagen-perfil {
+  max-width: 150px;
+  margin: 0 auto; 
+  display: block; 
+}
+
+.descripcion {
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%; 
+}
+
+.iconofoto {
+  cursor: pointer
+}
+
+.icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+/*crear actividad*/
+.crear_body{
+  padding: 50px;
+  padding-bottom: 25px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgba(20, 110, 115, 0.599);
+  margin-top: 20px;
+  border-radius: 15px;
+  margin-bottom: 50px;
+}
+
+
+/*actualizar*/
+.form_act{
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 50px;
+}
+
+.act_izq{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.input{
+  width: 90%;
+}
+
+.izq_label{
+  width: 40%;
+}
+
+.map_crear{
+  margin-top: 20px;
+}
+
+.actualizar{
+  margin-top: 30px;
 }
