@@ -333,9 +333,6 @@ footer p {
 }
 
 .tabla_content {
-  display: flex;
-  gap: 25px;
-  flex-direction: column;
   margin-top: 25px;
   margin-bottom: 25px;
 }
@@ -425,6 +422,7 @@ span {
 
 .todo_museo {
   background-color: rgb(15, 14, 14);
+  padding-bottom: 25px;
 }
 
 .museo_bottom {
@@ -449,5 +447,55 @@ span {
 }
 
 .iconofoto {
-  margin-left: 60px;
+  margin-top: 10px;
 }
+.columnas-museos{
+  width: 10%;
+  padding: 20px;
+}
+.columnas-museos-descripcion{
+  width: 45%;
+  padding: 20px;
+}
+.columnas-museos-lugar{
+  width: 15%;
+  padding: 20px;
+}
+.tarjetaTitulo{
+  color: tomato;
+  font-size: 12px;
+  font-weight: bold;
+  text-decoration: underline;
+}
+.cuerpoCard{
+  font-size: 10px;
+}
+
+.tarjetaVer{
+  width: 130px;
+}
+
+/*perfil*/
+.imagen-perfil {
+  max-width: 150px;
+  margin: 0 auto; 
+  display: block; 
+}
+
+.descripcion {
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%; 
+}
+
+.iconofoto {
+  cursor: pointer
+}
+
+.icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+

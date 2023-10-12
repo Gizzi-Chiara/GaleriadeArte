@@ -24,27 +24,26 @@ const Museos = () => {
                         <div className='top_act'>
                             <table>
                                 <div>
-                                    <div>
                                         <thead className='tabla_content'>
-                                            <tr>
-                                                <th className='museos_top columna_b'>Museo</th>
-                                                <th className='museos_top columnas'>Tipo</th>
-                                                <th className='museos_top columnas lugar'>Lugar</th>
-                                                <th className='museos_top columnas'>Horario</th>
-                                                <th className='museos_top columnas'>Descripción</th>
+                                            <tr className='filas-museos'>
+                                                <th className='museos_top columnas-museos'>Museo</th>
+                                                <th className='museos_top columnas-museos'>Tipo</th>
+                                                <th className='museos_top columnas-museos-lugar'>Lugar</th>
+                                                <th className='museos_top columnas-museos'>Horario</th>
+                                                <th className='museos_top columnas-museos-descripcion'>Descripción</th>
+                                                <th className='museos_top columnas-museos'>Acciones</th>
                                             </tr>
                                         </thead >
-                                    </div>
                                     <tbody className='museos_body'>
                                         {
                                             museos.map((museo, index) => (
-                                                <tr key={index}>
-                                                    <td>{museo.museo}</td>
-                                                    <td>{museo.tipo}</td>
-                                                    <td>{museo.lugar}</td>
-                                                    <td>{museo.horario}</td>
-                                                    <td>{museo.descripcion}</td>
-                                                    <td>
+                                                <tr key={index} className='filas-museos'>
+                                                    <td className='columnas-museos'>{museo.museo}</td>
+                                                    <td className='columnas-museos'>{museo.tipo}</td>
+                                                    <td className='columnas-museos-lugar'>{museo.lugar}</td>
+                                                    <td className='columnas-museos'>{museo.horario}</td>
+                                                    <td className='columnas-museos-descripcion'>{museo.descripcion}</td>
+                                                    <td className='columnas-museos'>
                                                         <Link to={`/museos/ver/${museo.id}`} className='actividadesLink'>Ver</Link>
                                                     </td>
                                                 </tr>

@@ -80,13 +80,13 @@ const Jade = () => {
                                         <Popup longitude={museo.long} latitude={museo.lat}
                                             anchor="left"
                                             onClose={() => setShowPopup(false)}>
-                                            <div className='card'>
-                                                <label className='cardTitle'>Museo: </label>
-                                                <h4 className='cardDesc museo'>{museo.museo}</h4>
-                                                <label className='cardTitle'>Horario: </label>
-                                                <h4 className='cardDesc'>{museo.horario}</h4>
-                                                <label className='cardTitle'>Tipo: </label>
-                                                <h4 className='cardDesc'>{museo.tipo}</h4>
+                                            <div className='card tarjetaVer'>
+                                                <label className='cardTitle tarjetaTitulo'>Museo: </label>
+                                                <h4 className='cardDesc museo cuerpoCard'>{museo.museo}</h4>
+                                                <label className='cardTitle tarjetaTitulo'>Horario: </label>
+                                                <h4 className='cardDesc cuerpoCard'>{museo.horario}</h4>
+                                                <label className='cardTitle tarjetaTitulo'>Tipo: </label>
+                                                <h4 className='cardDesc cuerpoCard'>{museo.tipo}</h4>
                                             </div>
                                         </Popup>)}
                                 </div>
