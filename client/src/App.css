@@ -23,7 +23,7 @@
   width: 299px;
 }
 
-/*IMAGEN DEL INICIO*/
+/IMAGEN DEL INICIO/
 .principal {
   height: 450px;
 }
@@ -41,7 +41,7 @@
 }
 
 
-/*TARJETAS MENU PRINCIPAL*/
+/TARJETAS MENU PRINCIPAL/
 
 .tarjeta {
   flex-wrap: wrap;
@@ -62,7 +62,7 @@
   filter: drop-shadow(0 0 12px rgba(243, 242, 228, 0.71));
 }
 
-/*MIS OBRAS*/
+/MIS OBRAS/
 .misObras {
   margin: 30px;
   height: 100vh;
@@ -72,7 +72,7 @@
   padding: 15px;
 }
 
-/*DETALLE*/
+/DETALLE/
 .detalle {
   margin: 60px auto;
   width: 75%;
@@ -94,7 +94,7 @@
   cursor: pointer;
 }
 
-/*NUEVA OBRA*/
+/NUEVA OBRA/
 .nuevo {
   margin: 30px auto;
   background-color: rgba(0, 0, 0, 0.468);
@@ -113,7 +113,7 @@
 
 }
 
-/*LOGING*/
+/LOGING/
 .formulario1,
 .formulario2 {
   margin: 100px auto;
@@ -163,7 +163,7 @@
   background-image: url(https://madpix.com.br/wp-content/uploads/2021/04/old-black-background-grunge-texture-dark-wallpaper-blackboard-chalkboard-room-wall-scaled.jpg);
 }*/
 
-/*FOOTER*/
+/FOOTER/
 
 footer p {
   font-size: small;
@@ -220,7 +220,7 @@ footer p {
   font-size: 10px;
 }
 
-/*miobra*/
+/miobra/
 .footer_obras {
   left: 0;
   bottom: 0;
@@ -229,7 +229,7 @@ footer p {
   margin-top: 6%;
 }
 
-/*lista actividades*/
+/lista actividades/
 
 .actividadesLink {
   color: white;
@@ -338,7 +338,7 @@ footer p {
 }
 
 
-/*museos*/
+/museos/
 .museos_centro {
   padding: 70px;
   background-image: url("./componentes/imagenes/museos2.jpg");
@@ -373,7 +373,7 @@ footer p {
   text-wrap: wrap;
 }
 
-/*museo*/
+/museo/
 .informacionPrincipal {
   padding: 30px;
   display: flex;
@@ -435,30 +435,42 @@ span {
 }
 
 .imagen-perfil {
-  max-width: 150px;
-  margin: 0 auto; 
-  display: block; 
+  max-width: 200px;
+  /* Cambia el tamaño según tus preferencias */
+  max-height: 150px;
+  margin-left: 50px;
 }
 
 .descripcion {
-  margin-top: 30px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 80%; 
-
+  margin-top: 90px;
+  margin-left: 50px;
 }
 
 .iconofoto {
-  cursor: pointer
+  margin-top: 10px;
+}
+.columnas-museos{
+  width: 10%;
+  padding: 20px;
+}
+.columnas-museos-descripcion{
+  width: 45%;
+  padding: 20px;
+}
+.columnas-museos-lugar{
+  width: 15%;
+  padding: 20px;
+}
+.tarjetaTitulo{
+  color: tomato;
+  font-size: 12px;
+  font-weight: bold;
+  text-decoration: underline;
+}
+.cuerpoCard{
+  font-size: 10px;
 }
 
-.icon-container {
-  display: flex;
-  justify-content: center;
-  align-items: center; 
-<<<<<<< HEAD
+.tarjetaVer{
+  width: 130px;
 }
-
-=======
-}
->>>>>>> 0024c2be1e2ce6bf970e337a34b1db3db0c2c8ff
