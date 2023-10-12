@@ -113,8 +113,8 @@ const Actividades = () => {
                                             <Link to={`/actividades/ver/${actividad._id}`} className='actividadesLink'>Ver</Link>
                                             {actividad.creador === creador ?
                                                 <div>
-                                                    <Link to={`/actividades/editar/${actividad._id}`} className='actividadesLink'>Editar</Link>
-                                                    <button onClick={() => borrarActividad(actividad._id)}>Borrar</button>
+                                                    <Link to={`/actividades/editar/${actividad._id}`} className='actividadesLink1'>Editar</Link>
+                                                    <button onClick={() => borrarActividad(actividad._id)} className='actividadesLink1'>Borrar</button>
                                                 </div> : null
                                             }
                                         </td>

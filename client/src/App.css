@@ -242,6 +242,21 @@ footer p {
 }
 
 .actividadesLink:hover {
+  font-size: 16px;
+}
+
+.actividadesLink1 {
+  color: white;
+  text-decoration: none;
+  width: 60px;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: rgba(128, 87, 128, 0.707);
+  font-size: 15px;
+  margin-top: 5px;
+}
+
+.actividadesLink1:hover {
   font-size: 17px;
 }
 

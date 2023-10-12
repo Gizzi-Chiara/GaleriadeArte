@@ -3,7 +3,9 @@ import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 import { Map, Marker, Popup } from 'react-map-gl';
 import PinImagen from './imagenes/wing.png';
-import 'mapbox-gl/dist/mapbox-gl.css'
+import 'mapbox-gl/dist/mapbox-gl.css';
+import logo from './logo/logo.png';
+
 
 const VerActividad = () => {
 
@@ -30,7 +32,17 @@ const VerActividad = () => {
 
     return (
         <div>
-            <Link to={`/actividades`}>Regresar</Link>
+            <div className="navbar navbar-expand-lg bg-dark p-1" data-bs-theme="dark">
+                    <div className='nav_act'>
+                        <img className='logo' src={logo} alt='logo' />
+                        <h1>Detalles de la actividad</h1>
+                        <ul className='link_actividades navbar-nav me-auto mb-2 mb-lg-0 ms-3 lista'>
+                            <li className="nav-item">
+                                <Link to="/" className="nav-link active">Regresar</Link>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             <div className='informacionPrincipal'>
                 <h1>Actividad: {actividad.actividad}</h1>
                 <h2>Tipo: {actividad.tipo}</h2>
