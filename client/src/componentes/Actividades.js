@@ -21,11 +21,11 @@ const Actividades = () => {
             .catch(err => {
                 if (err.response.status === 401) {
                     setCreador("");
-                    console.log("¨Si sesion iniciada");
+                    console.log("Sin sesion iniciada!");
                 }
             })
     }, [])
-
+//comentario
     const borrarActividad = id => {
         axios.delete("http://localhost:8000/api/actividades/" + id)
             .then(res => {
