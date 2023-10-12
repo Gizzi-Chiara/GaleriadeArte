@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import logo from './logo/logo.png'
 
 const Actividades = () => {
     const [actividades, setActividades] = useState([]);
@@ -13,8 +14,16 @@ const Actividades = () => {
     var nueva = [];
     useEffect(() => {
         axios.get("http://localhost:8000/api/actividades")
-            .then(res => {setActividades(res.data)})
+            .then(res => { setActividades(res.data) })
             .catch(err => console.log(err));
+        axios.get("http://localhost:8000/api/onsesion", { withCredentials: true })
+            .then(res => { setCreador(res.data._id) })
+            .catch(err => {
+                if (err.response.status === 401) {
+                    setCreador("");
+                    console.log("¨Si sesion iniciada");
+                }
+            })
     }, [])
 
     const borrarActividad = id => {
@@ -26,71 +35,95 @@ const Actividades = () => {
                 setActividadesImprimir(nuevasegundaLista);
             })
     }
-    const elegirTipo = e =>{
-        pretipo=e.target.value;
+    const elegirTipo = e => {
+        pretipo = e.target.value;
         setTipo(pretipo);
-        lista=actividades;
-        nueva=[];
-        for(let i=0;i<actividades.length;i++){
-            if(pretipo==="Todas"){
-                nueva=actividades;
+        lista = actividades;
+        nueva = [];
+        for (let i = 0; i < actividades.length; i++) {
+            if (pretipo === "Todas") {
+                nueva = actividades;
             }
-            else if(pretipo===actividades[i].tipo){
-                nueva=[...nueva,actividades[i]];
+            else if (pretipo === actividades[i].tipo) {
+                nueva = [...nueva, actividades[i]];
             }
-            else{}
+            else { }
         }
         setActividadesImprimir(nueva);
     }
 
     return (
-        <div>
-            <Link to="/actividades/crear" className='actividadesLink'>Crear Actividad</Link>
-            <Link to="/" className='actividadesLink'>Regresar</Link>
-            <div>
-                <label>Seleccione la categoría de actividades</label>
-                <select name= "tipo" onChange={elegirTipo} defaultValue={'DEFAULT'}>
-                    <option value="DEFAULT" disabled>Seleccione uno</option>
-                    <option value="Todas">Todas</option>
-                    <option value="Música">Música</option>
-                    <option value="Pintura">Pintura</option>
-                    <option value="Artresanías">Artesanías</option>
-                    <option value="Teatro">Teatro</option>
-                    <option value="Tatoos">Tatoos</option>
-                    <option value="Baile">Baile</option>
-                    <option value="Varios">Varios</option>
-                    <option value="Otro">Otro</option>
-                </select>
+        <div className='lista_actividades'>
+            <div className="navbar navbar-expand-lg bg-dark p-1" data-bs-theme="dark">
+                <div className='nav_act'>
+                    <img className='logo' src={logo} alt='logo' />
+                    <h1>Próximas actividades</h1>
+                    <ul className='link_actividades navbar-nav me-auto mb-2 mb-lg-0 ms-3 lista'>
+                        <li className="nav-item">
+                            <Link to="/actividades/crear" className="nav-link active">Crear Actividad</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link to="/" className="nav-link active">Regresar</Link>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Actividad</th>
-                        <th>Tipo</th>
-                        <th>Lugar</th>
-                        <th>Horario</th>
-                        <th>Fecha</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {
-                        actividadesImprimir.map((actividad, index) => (
-                            <tr key={index}>
-                                <td>{actividad.actividad}</td>
-                                <td>{actividad.tipo}</td>
-                                <td>{actividad.lugar}</td>
-                                <td>{actividad.horario}</td>
-                                <td>{actividad.fecha}</td>
-                                <td>
-                                    <Link to={`/actividades/ver/${actividad._id}`} className='actividadesLink'>Ver</Link>
-                                    <Link to={`/actividades/editar/${actividad._id}`} className='actividadesLink'>Editar</Link>
-                                    <button onClick={() => borrarActividad(actividad._id)}>Borrar</button>
-                                </td>
+            <div className='actividades_centro'>
+                <div className='top_act'>
+                    <div className='actividades_selector'>
+                        <label>Seleccione la categoría de actividades</label>
+                    </div>
+                    <div>
+                        <select name="tipo" className='form-select-sm mb-3' onChange={elegirTipo} defaultValue={'DEFAULT'}>
+                            <option value="DEFAULT" disabled>Seleccione uno</option>
+                            <option value="Todas">Todas</option>
+                            <option value="Música">Música</option>
+                            <option value="Pintura">Pintura</option>
+                            <option value="Artresanías">Artesanías</option>
+                            <option value="Teatro">Teatro</option>
+                            <option value="Tatoos">Tatoos</option>
+                            <option value="Baile">Baile</option>
+                            <option value="Varios">Varios</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                    </div>
+                </div>
+                <table className='actividades_tabla'>
+                    <div className='tabla_tabla'>
+                        <thead>
+                            <tr>
+                                <th className='columna_a'>Actividad</th>
+                                <th className='columnas'>Tipo</th>
+                                <th className='columnas'>Lugar</th>
+                                <th className='columnas'>Horario</th>
+                                <th className='columnas'>Fecha</th>
                             </tr>
-                        ))
-                    }
-                </tbody>
-            </table>
+                        </thead>
+                        <tbody>
+                            {
+                                actividadesImprimir.map((actividad, index) => (
+                                    <tr key={index}>
+                                        <td className='columna_a'>{actividad.actividad}</td>
+                                        <td className='columnas'>{actividad.tipo}</td>
+                                        <td className='columnas'>{actividad.lugar}</td>
+                                        <td className='columnas'>{actividad.horario}</td>
+                                        <td className='columnas'>{actividad.fecha}</td>
+                                        <td className='columnas'>
+                                            <Link to={`/actividades/ver/${actividad._id}`} className='actividadesLink'>Ver</Link>
+                                            {actividad.creador === creador ?
+                                                <div>
+                                                    <Link to={`/actividades/editar/${actividad._id}`} className='actividadesLink'>Editar</Link>
+                                                    <button onClick={() => borrarActividad(actividad._id)}>Borrar</button>
+                                                </div> : null
+                                            }
+                                        </td>
+                                    </tr>
+                                ))
+                            }
+                        </tbody>
+                    </div>
+                </table>
+            </div>
         </div>
     )
 }

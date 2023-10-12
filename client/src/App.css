@@ -73,7 +73,7 @@
 
 /*DETALLE*/
 .detalle{
-  margin: 30px auto;
+  margin: 60px auto;
   width: 75%;
   background-color: rgba(209, 200, 196, 0.121);
   border: 1px solid white;
@@ -210,4 +210,93 @@ footer p {
 }
 .derechos{
   font-size: 10px;
+}
+
+/*miobra*/
+.footer_obras{
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 25%;
+  margin-top: 6%;
+}
+
+/*lista actividades*/
+
+.actividadesLink{
+  color: white;
+  text-decoration: none;
+}
+
+.actividadesLink:hover{
+  font-size: 17px;
+}
+
+.link_actividades{
+  display: flex;
+  gap: 40px;
+}
+
+.nav_act{
+  display: flex;
+  align-items: center;
+  gap: 70px;
+  justify-content: space-around;
+  margin-left: 25px;
+}
+
+.actividades_centro{
+  padding: 25px;
+  background-image: url("./componentes/imagenes/fondo.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+.actividades_selector{
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+}
+
+.actividades_selector label {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.actividades_tabla{
+  width: 90%;
+  height: 90%;
+  background-color: rgba(91, 106, 106, 0.571);
+  border-radius: 10px;
+  padding: 25px;
+  margin: 0 auto;
+}
+
+.top_act{
+  display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 25px;
+    margin-left: 75px;
+    margin-bottom: 20px;
+    align-items: baseline;
+}
+
+.tabla_tabla{
+  padding: 30px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.columnas{
+  width: 15%;
+}
+
+.columna_a{
+  width: 40%;
+  text-wrap: wrap;
+  text-align: justify;
 }

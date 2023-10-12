@@ -118,6 +118,7 @@
 
 .desarrolladoras1{
     margin-left: 30px;
+    margin-top: 15px;
 }
 
 .top_acerca{
@@ -139,4 +140,9 @@
     color: white;
     font-size: 19px;
     text-decoration: underline;
+}
+
+.linkedin1{
+    position: fixed;
+    bottom: 15px;
 }

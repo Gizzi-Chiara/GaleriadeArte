@@ -69,7 +69,9 @@ const MiObraD = () => {
                     </div>
                 </div>
             </div>
-            <Footer/>
+            <div className="footer_obras">
+                <Footer/>
+            </div>
         </div>
     );
 }

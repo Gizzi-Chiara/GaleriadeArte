@@ -2,6 +2,7 @@ const Usuario = require("../models/usuario.model");
 const jwt = require("jsonwebtoken");
 const secret_key = "Clave secreta";
 const bcrypt = require("bcrypt");
+const { RevealContent } = require("semantic-ui-react");
 
 module.exports.registro = (req, res) => {
     const user = new Usuario(req.body);
@@ -56,6 +57,11 @@ module.exports.login = (req, res) => {
             }
         })
         .catch(err => res.json(err));
+}
+
+module.exports.onsesion = (req,res) => {
+    usertoken_decoded = jwt.verify(req.cookies.usertoken,secret_key);
+    res.json({_id:usertoken_decoded._id})
 }
 
 module.exports.logout = (req, res) => {
