@@ -5,14 +5,15 @@ import { Map, Marker, Popup } from 'react-map-gl';
 import PinImagen from './imagenes/wing.png';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import logo from './logo/logo.png';
+import Footer from './Footer';
 
 
 const VerActividad = () => {
 
     const { id } = useParams();
     const [actividad, setActividad] = useState({
-        lat:9.65,
-        long:-84.09
+        lat: 9.65,
+        long: -84.09
     });
     const [showPopup, setShowPopup] = useState(true);
 
@@ -33,75 +34,98 @@ const VerActividad = () => {
     return (
         <div>
             <div className="navbar navbar-expand-lg bg-dark p-1" data-bs-theme="dark">
-                    <div className='nav_act'>
-                        <img className='logo' src={logo} alt='logo' />
-                        <h1>Detalles de la actividad</h1>
-                        <ul className='link_actividades navbar-nav me-auto mb-2 mb-lg-0 ms-3 lista'>
-                            <li className="nav-item">
-                                <Link to="/" className="nav-link active">Regresar</Link>
-                            </li>
-                        </ul>
+                <div className='nav_act'>
+                    <img className='logo' src={logo} alt='logo' />
+                    <h1>Detalles de la actividad</h1>
+                    <ul className='link_actividades navbar-nav me-auto mb-2 mb-lg-0 ms-3 lista'>
+                        <li className="nav-item">
+                            <Link to="/actividades" className="nav-link active">Regresar</Link>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div className='informacionPrincipal'>
+                <div className='ver'>
+                    <div className='ver_izq'>
+                            <div>
+                                <img src={actividad.imagen} alt='actividad' className='img-fluid ver_img'/>
+                            </div>
+                        <div className='info_act'>
+                            <div>
+                                <p><span>Actividad:</span>{actividad.actividad}</p>
+                                <p><span>Tipo:</span>{actividad.tipo}</p>
+                                <p><span>Organizador:</span>{actividad.organizador}</p>
+                                <p><span>Imagen:</span></p>
+                                <p><span>Horario:</span>{actividad.horario}</p>
+                                <p><span>Fecha:</span>{actividad.fecha}</p>
+                                <span>Página Web:</span><p className='linkpagina'>{actividad.paginaweb}</p>
+                            </div>
+                            <div>
+                                <p><span>Lugar: </span>{actividad.lugar}</p>
+                                <p><span>Descripción: </span>
+                                    {actividad.descripcion}
+                                </p>
+                                <div>
+                                    <label><span>Pet Friendly: </span></label>
+                                    {
+                                        actividad.petfriendly ? <p>Sí</p> : <p>No</p>
+                                    }
+                                </div>
+                                <div>
+                                    <label><span>Familiar: </span></label>
+                                    {
+                                        actividad.familiar ? <p>Sí</p> : <p>No</p>
+                                    }
+                                </div>
+                                <div>
+                                    <label><span>Venta de Comidas: </span></label>
+                                    {
+                                        actividad.ventadecomidas ? <p>Sí</p> : <p>No</p>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div className='ver_derecha'>
+                            <div>
+                                <div className='mapa_ver'>
+                                <span>Lugar:</span>
+                                    <Map
+                                        mapboxAccessToken='pk.eyJ1IjoibW9uaWNhbHVjaWExOTk0IiwiYSI6ImNsbmkwNHVvczFiODkybG1zcmFoMXQ1eHIifQ.X4HfG7hokZo_mNBg3Dxs3Q'
+                                        {...viewState}
+                                        onMove={evt => setViewState(evt.viewState)}
+                                        mapStyle="mapbox://styles/mapbox/streets-v9"
+                                        style={{ width: 400, height: 350 }}
+                                    >
+                                        <div id='marcador'>
+                                            <Marker longitude={actividad.long} latitude={actividad.lat} offsetLeft={-20} offsetTop={-10}>
+                                                <img src={PinImagen} style={{ fontSize: viewState.zoom * 5 }} />
+                                            </Marker>
+                                        </div>
+                                        <div>
+                                            {showPopup && (
+                                                <Popup longitude={actividad.long} latitude={actividad.lat}
+                                                    anchor="left"
+                                                    onClose={() => setShowPopup(false)}>
+                                                    <div className='card tarjetaVer'>
+                                                        <label className='cardTitle tarjetaTitulo'>Actividad: </label>
+                                                        <h4 className='cardDesc museo cuerpoCard'>{actividad.actividad}</h4>
+                                                        <label className='cardTitle tarjetaTitulo'>Horario: </label>
+                                                        <h4 className='cardDesc cuerpoCard'>{actividad.horario}</h4>
+                                                        <label className='cardTitle tarjetaTitulo'>Tipo: </label>
+                                                        <h4 className='cardDesc cuerpoCard'>{actividad.tipo}</h4>
+                                                    </div>
+                                                </Popup>)}
+                                        </div>
+                                    </Map>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            <div className='informacionPrincipal'>
-                <h1>Actividad: {actividad.actividad}</h1>
-                <h2>Tipo: {actividad.tipo}</h2>
-                <h2>Organizador: {actividad.organizador}</h2>
-                <h2>Imagen: </h2>
-                <img src={actividad.imagen} alt='actividad'/>
-                <h2>Horario: {actividad.horario}</h2>
-                <h2>Fecha: {actividad.fecha}</h2>
-                <h2>Página web: {actividad.paginaweb}</h2>
-                <h2>Lugar: {actividad.lugar}</h2>
-                <p>Descripcion:
-                    {actividad.descripcion}
-                </p>
             </div>
-            <label>Lugar:</label>
-            <div>
-                <div id='map'>
-                    <Map
-                        mapboxAccessToken='pk.eyJ1IjoibW9uaWNhbHVjaWExOTk0IiwiYSI6ImNsbmkwNHVvczFiODkybG1zcmFoMXQ1eHIifQ.X4HfG7hokZo_mNBg3Dxs3Q'
-                        {...viewState}
-                        onMove={evt => setViewState(evt.viewState)}
-                        mapStyle="mapbox://styles/mapbox/streets-v9"
-                        style={{ width: 400, height: 350 }}
-                    >
-                        <div id='marcador'>
-                            <Marker longitude={actividad.long} latitude={actividad.lat} offsetLeft={-20} offsetTop={-10}>
-                                <img src={PinImagen} style={{ fontSize: viewState.zoom * 5 }}/>
-                            </Marker>
-                        </div>
-                        <div>
-                            {showPopup && (
-                                <Popup longitude={actividad.long} latitude={actividad.lat}
-                                    anchor="left"
-                                    onClose={() => setShowPopup(false)}>
-                                    <div className='card'>
-                                        <label className='cardTitle'>Actividad: </label>
-                                        <h4 className='cardDesc museo'>{actividad.actividad}</h4>
-                                        <label className='cardTitle'>Horario: </label>
-                                        <h4 className='cardDesc'>{actividad.horario}</h4>
-                                        <label className='cardTitle'>Tipo: </label>
-                                        <h4 className='cardDesc'>{actividad.tipo}</h4>
-                                    </div>
-                                </Popup>)}
-                        </div>
-                    </Map>
-                </div>
-            </div>
-            <h2>Pet Friendly</h2>
-            {
-                actividad.petfriendly ? <span>SI</span> : <span>NO</span>
-            }
-            <h2>Familiar</h2>
-            {
-                actividad.familiar ? <span>SI</span> : <span>NO</span>
-            }
-            <h2>Venta de comidas</h2>
-            {
-                actividad.ventadecomidas ? <span>SI</span> : <span>NO</span>
-            }
+            <Footer/>
         </div>
     )
 }

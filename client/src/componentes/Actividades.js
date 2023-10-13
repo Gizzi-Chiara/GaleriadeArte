@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import logo from './logo/logo.png'
+import Footer from './Footer';
 
 const Actividades = () => {
     const [actividades, setActividades] = useState([]);
@@ -125,6 +126,7 @@ const Actividades = () => {
                     </div>
                 </table>
             </div>
+            <Footer/>
         </div>
     )
 }

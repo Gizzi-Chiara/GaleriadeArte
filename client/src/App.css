@@ -549,3 +549,56 @@ span {
 .actualizar{
   margin-top: 30px;
 }
+
+/*ver*/
+.ver{
+  display: flex;
+  flex-direction: row;
+  padding: 80px;
+  padding-bottom: 25px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: rgba(33, 124, 129, 0.517);
+  margin-top: 20px;
+  border-radius: 15px;
+  margin-bottom: 50px;
+}
+
+.ver_izq{
+  width: 40%;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  margin-left: 50px;
+  flex: 1;
+  justify-content: space-between;
+}
+
+.info_act{
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+}
+
+.ver_img{
+  width: 350px;
+}
+
+.mapa_ver{
+  margin-right: 70px;
+  margin-top: 150px;
+  margin-left: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.linkpagina{
+  font-size: 10px;
+}
