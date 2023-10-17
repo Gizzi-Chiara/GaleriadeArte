@@ -6,6 +6,7 @@ import PinImagen from './imagenes/wing.png';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import logo from './logo/logo.png';
 import Footer from './Footer';
+import { set } from 'mongoose';
 
 const ActualizarActividad = () => {
     const [actividad, setActividad] = useState("");
@@ -34,6 +35,10 @@ const ActualizarActividad = () => {
 
     const [errors, setErrors] = useState({});
 
+    const [ano, setAno] = useState(new Date().getFullYear());
+    const [mes, setMes] = useState((new Date().getMonth()+1));
+    const [dia, setDia] = useState(new Date().getDate());
+
     var laIncome = 0;
     var loIncome = 0;
 
@@ -54,6 +59,11 @@ const ActualizarActividad = () => {
                 setPaginaweb(res.data.paginaweb);
                 setLat(res.data.lat);
                 setLong(res.data.long)
+                if (mes < 10){
+                    setMes("0"+mes.toString)
+                } else {
+                    setMes(mes);
+                }
             })
             .catch(err => console.log(err))
     }, [id])
@@ -115,7 +125,7 @@ const ActualizarActividad = () => {
                         <h1>Actualizar Actividad</h1>
                         <ul className='link_actividades navbar-nav me-auto mb-2 mb-lg-0 ms-3 lista'>
                             <li className="nav-item">
-                                <Link to="/" className="nav-link active">Regresar</Link>
+                                <Link to="/actividades" className="nav-link active">Regresar</Link>
                             </li>
                         </ul>
                     </div>
@@ -146,12 +156,12 @@ const ActualizarActividad = () => {
                                 </div>
                                 <div>
                                     <label className='izq_label'>Horario:</label>
-                                    <input type="text" className='input' id="horario" value={horario} onChange={e => setHorario(e.target.value)} />
+                                    <input type="time" className='input' id="horario" value={horario} onChange={e => setHorario(e.target.value)} />
                                     {errors.horario ? <span>{errors.horario.message}</span> : null}
                                 </div>
                                 <div>
                                     <label className='izq_label'>Fecha:</label>
-                                    <input type="text" className='input' id="fecha" value={fecha} onChange={e => setFecha(e.target.value)} />
+                                    <input type="date" min={`${ano}-${mes}-${dia}`} className='input' id="fecha" value={fecha} onChange={e => setFecha(e.target.value)} />
                                     {errors.fecha ? <span>{errors.fecha.message}</span> : null}
                                 </div>
                                 <div>

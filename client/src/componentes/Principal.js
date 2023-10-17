@@ -45,13 +45,11 @@ const Principal = () => {
                     <Link to="/misObras" className="btn btn-outline-light agregar m-2">Mis Obras</Link>
                 </div>
                 <div>
-                    <div className="tarjeta d-flex">
+                    <div className="grid-gallery">
                         {
                             obras.filter((obra) => obra.categoria.toLowerCase().includes(filtro)).map((obra, index) => (
-                                <div className="card-image m-3 pb-1" key={index}>
-                                    <div>
-                                        <img src={obra.imagen} className="img-thumbnail" alt="imagen" onClick={() => navigate(`/obra/${obra._id}`)} />
-                                    </div>
+                                <div className="grid-gallery__item" key={index}>
+                                    <img src={obra.imagen} className="grid-gallery__image" alt="imagen" onClick={() => navigate(`/obra/${obra._id}`)} />
                                 </div>
                             ))
                         }
@@ -61,11 +59,9 @@ const Principal = () => {
                     <Modal />
                 </div>
             </div>
-
             <div>
                 <Footer />
             </div>
-
         </div>
     );
 }

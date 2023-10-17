@@ -32,6 +32,10 @@ const CrearActividad = () => {
 
     const [errors, setErrors] = useState({});
 
+    const [ano, setAno] = useState(new Date().getFullYear());
+    const [mes, setMes] = useState((new Date().getMonth()+1));
+    const [dia, setDia] = useState(new Date().getDate());
+
     var laIncome = 0;
     var loIncome = 0;
 
@@ -123,12 +127,12 @@ const CrearActividad = () => {
                                 </div>
                                 <div>
                                     <label className='izq_label'>Horario:</label>
-                                    <input type="text" className='input' id="horario" value={horario} onChange={e => setHorario(e.target.value)} />
+                                    <input type="time" className='input' id="horario" value={horario} onChange={e => setHorario(e.target.value)} />
                                     {errors.horario ? <span>{errors.horario.message}</span> : null}
                                 </div>
                                 <div>
                                     <label className='izq_label'>Fecha:</label>
-                                    <input type="text" className='input' id="fecha" value={fecha} onChange={e => setFecha(e.target.value)} />
+                                    <input type="date" min={`${ano}-${mes}-${dia}`} className='input' id="fecha" value={fecha} onChange={e => setFecha(e.target.value)} />
                                     {errors.fecha ? <span>{errors.fecha.message}</span> : null}
                                 </div>
                                 <div>

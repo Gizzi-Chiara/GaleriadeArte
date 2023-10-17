@@ -7,6 +7,7 @@ import Nav from "./Nav";
 const MiObraD = () => {
     const {id} = useParams();
     const [obras, setObras] = useState([]);
+    const [lista, setLista] = useState([]);
     const [usuario, setUsuario] = useState("");
     const [creador, setCreador] = useState("");
     const navigate = useNavigate();
@@ -30,10 +31,10 @@ const MiObraD = () => {
         }
     }, [creador])
 
-    const borrarObra = id =>{
-        axios.delete("http://localhost:8000/api/borrar/obra/" + id, {withCredentials:true})
+    const borrarObra = id_borrar =>{
+        axios.delete("http://localhost:8000/api/borrar/obra/" + id_borrar, {withCredentials:true})
             .then(res => {
-                let nuevaLista = obras.filter(obra => obra._id !== id); //Sale que algo type error
+                let nuevaLista = lista.filter(obras => obras._id !== id); //Sale que algo type error
                 setObras(nuevaLista);
             })
             .catch( err => {

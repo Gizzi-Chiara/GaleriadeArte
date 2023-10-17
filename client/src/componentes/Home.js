@@ -3,6 +3,8 @@ import "react-multi-carousel/lib/styles.css";
 import "./HomeCarrusel.css"
 import logo from './logo/logo.png'
 import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+import { useState, useEffect } from "react";
 
 const responsive = {
     superLargeDesktop: {
@@ -26,11 +28,33 @@ const responsive = {
 
 
 const Home = () => {
+    const [creador, setCreador] = useState(null);
 
     const navigate = useNavigate();
     const sesion = () => {
         navigate("/login");
     }
+
+    const logout = () => {
+        axios.get('http://localhost:8000/api/logout', {withCredentials:true})
+            .then(res => {
+                navigate("/login");
+                setCreador(null);
+            })
+            .catch(err => console.log(err));
+    }
+
+    useEffect(() => {
+        axios.get("http://localhost:8000/api/onsesion", { withCredentials: true })
+            .then(res => { setCreador(res.data._id) })
+            .catch(err => {
+                if (err.response.status === 401) {
+                    setCreador(null);
+                    console.log("Sin sesion iniciada!");
+                }
+            })
+    }, [])
+
     return (
         <div>
             <nav className="navbar navbar-expand-lg bg-dark p-1 " data-bs-theme="dark">
@@ -47,7 +71,8 @@ const Home = () => {
                             </li>
                         </ul>
                     </div>
-                    <button onClick={sesion} className="btn btn-light ms-3">Iniciar sesión</button>
+                    {creador === null ? <button onClick={sesion} className="btn btn-light ms-3">Iniciar sesión</button> :
+                    <button onClick={logout} className="btn btn-light ms-3">Cerrar sesión</button>}
                 </div>
             </nav>
             <div className="p-5 mt-5 carr">

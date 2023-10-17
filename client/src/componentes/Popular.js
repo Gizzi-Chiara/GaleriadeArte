@@ -54,7 +54,7 @@ const Popular = () => {
                             <p><span>Tipo:</span>{museo.tipo}</p>
                             <p><span>Encargado:</span>{museo.encargado}</p>
                             <p><span>Horario:</span>{museo.horario}</p>
-                            <p><span>Página web:</span>{museo.paginaweb}</p>
+                            <span>Página web:</span><Link to={museo.paginaweb} className='link_actmus'>{museo.paginaweb}</Link>
                             <p><span>Ubicación:</span>{museo.lugar}</p>
                             <p><span>Descripción:</span><br></br>
                                 {museo.descripcion}

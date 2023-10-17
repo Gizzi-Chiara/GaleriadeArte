@@ -6,7 +6,8 @@ import PinImagen from './imagenes/wing.png';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import logo from './logo/logo.png';
 import Footer from './Footer';
-
+import Check from "./imagenes/check.png";
+import No from "./imagenes/no.png";
 
 const VerActividad = () => {
 
@@ -55,10 +56,12 @@ const VerActividad = () => {
                                 <p><span>Actividad:</span>{actividad.actividad}</p>
                                 <p><span>Tipo:</span>{actividad.tipo}</p>
                                 <p><span>Organizador:</span>{actividad.organizador}</p>
-                                <p><span>Imagen:</span></p>
                                 <p><span>Horario:</span>{actividad.horario}</p>
                                 <p><span>Fecha:</span>{actividad.fecha}</p>
-                                <span>Página Web:</span><p className='linkpagina'>{actividad.paginaweb}</p>
+                                <span>Página web:</span>
+                                <div className='link_act'>
+                                    <Link to={actividad.paginaweb} className='link_actmus'>{actividad.paginaweb}</Link>
+                                </div>
                             </div>
                             <div>
                                 <p><span>Lugar: </span>{actividad.lugar}</p>
@@ -68,19 +71,19 @@ const VerActividad = () => {
                                 <div>
                                     <label><span>Pet Friendly: </span></label>
                                     {
-                                        actividad.petfriendly ? <p>Sí</p> : <p>No</p>
+                                        actividad.petfriendly ? <img src={Check} alt='check' className='check'/> : <img src={No} alt='check' className='check2'/>
                                     }
                                 </div>
                                 <div>
                                     <label><span>Familiar: </span></label>
                                     {
-                                        actividad.familiar ? <p>Sí</p> : <p>No</p>
+                                        actividad.familiar ? <img src={Check} alt='check' className='check'/> : <img src={No} alt='check' className='check2'/>
                                     }
                                 </div>
                                 <div>
                                     <label><span>Venta de Comidas: </span></label>
                                     {
-                                        actividad.ventadecomidas ? <p>Sí</p> : <p>No</p>
+                                        actividad.ventadecomidas ? <img src={Check} alt='check' className='check'/> : <img src={No} alt='check' className='check2'/>
                                     }
                                 </div>
                             </div>
@@ -90,7 +93,7 @@ const VerActividad = () => {
                         <div className='ver_derecha'>
                             <div>
                                 <div className='mapa_ver'>
-                                <span>Lugar:</span>
+                                <span>Ubicación:</span>
                                     <Map
                                         mapboxAccessToken='pk.eyJ1IjoibW9uaWNhbHVjaWExOTk0IiwiYSI6ImNsbmkwNHVvczFiODkybG1zcmFoMXQ1eHIifQ.X4HfG7hokZo_mNBg3Dxs3Q'
                                         {...viewState}

@@ -91,87 +91,85 @@ const MisObras = () => {
     };
 
 
-        return (
-            <div>
-                <Nav />
-                <div className="container mt-5">
-                    <div className="row">
-                        <div className="col-md-2">
-                            {/* Espacio para la foto */}
-                            {isAddingNewFoto ? (
-                                <>
-                                    <input
-                                        type="text"
-                                        placeholder="URL de la foto de perfil"
-                                        value={newFoto}
-                                        onChange={handleFotoChange}
-                                    />
-                                    <button className="btn btn-outline-info mt-2" onClick={handleGuardarNuevaFoto}>
-                                        Guardar
-                                    </button>
-                                </>
-                            ) : (
-                                <>
-                                    {foto ? (
-                                        <>
-                                            <img src={foto} alt="Foto de Perfil" className="img-fluid imagen-perfil" />
-                                            <div className="icon-container"><i className="bi bi-gear editar-icon iconofoto" onClick={handleActualizarFoto}>Actualizar Avatar</i></div>
-                                            
-                                        </>
-                                    ) : (
-                                        <>
-                                            <button className="btn btn-outline-info mt-2" onClick={handleAgregarFoto}>Agregar Foto</button>
-                                        </>
-                                    )}
-                                </>
-                            )}
-                        </div>
-                        <div className="col-md-9 descripcion">
-                            {/* Cuadro de descripción */}
-                            {editingDescripcion ? (
-                                <>
-                                    <textarea
-                                        className="form-control"
-                                        value={descripcion}
-                                        onChange={(e) => setDescripcion(e.target.value)}
-                                    />
-                                    <button className="btn btn-outline-info mt-2" onClick={handleGuardarDescripcion}>
-                                        Guardar
-                                    </button>
-                                </>
-                            ) : (
-                                <>
-                                    <div className="card">
-                                        <div className="card-body">
-                                            <h5 className="card-title">Mi Descripción</h5>
-                                            <p className="card-text">{descripcion}</p>
-                                        </div>
-                                    </div>
-                                    <div className="icon-container"><i className="bi bi-gear editar-icon iconofoto" onClick={handleEditarDescripcion}>Actualizar Descripcion</i></div>
-                                    
-                                </>
-                            )}
-                        </div>
+    return (
+        <div>
+            <Nav />
+            <div className="container mt-5">
+                <div className="row">
+                    <div className="col-md-2">
+                        {/* Espacio para la foto */}
+                        {isAddingNewFoto ? (
+                            <>
+                                <input
+                                    type="text"
+                                    placeholder="URL de la foto de perfil"
+                                    value={newFoto}
+                                    onChange={handleFotoChange}
+                                />
+                                <button className="btn btn-outline-info mt-2" onClick={handleGuardarNuevaFoto}>
+                                    Guardar
+                                </button>
+                            </>
+                        ) : (
+                            <>
+                                {foto ? (
+                                    <>
+                                        <img src={foto} alt="Foto de Perfil" className="img-fluid imagen-perfil" />
+                                        <div className="icon-container"><i className="bi bi-gear editar-icon iconofoto" onClick={handleActualizarFoto}>Actualizar Avatar</i></div>
+
+                                    </>
+                                ) : (
+                                    <>
+                                        <button className="btn btn-outline-info mt-2" onClick={handleAgregarFoto}>Agregar Foto</button>
+                                    </>
+                                )}
+                            </>
+                        )}
                     </div>
-                    <h1 className="text-center mt-3">Mis Obras:</h1>
-                    <div className="tarjeta d-flex misObras">
-                        {
-                            obras.map((obra, index) => (
-                                <div className="card-image m-3 pb-1" key={index}>
-                                    <div>
-                                        <img src={obra.imagen} className="img-thumbnail" alt="imagen" onClick={() => navigate(`/detalle/${obra._id}`)} />
+                    <div className="col-md-9 descripcion">
+                        {/* Cuadro de descripción */}
+                        {editingDescripcion ? (
+                            <>
+                                <textarea
+                                    className="form-control"
+                                    value={descripcion}
+                                    onChange={(e) => setDescripcion(e.target.value)}
+                                />
+                                <button className="btn btn-outline-info mt-2" onClick={handleGuardarDescripcion}>
+                                    Guardar
+                                </button>
+                            </>
+                        ) : (
+                            <>
+                                <div className="card">
+                                    <div className="card-body">
+                                        <h5 className="card-title">Mi Descripción</h5>
+                                        <p className="card-text">{descripcion}</p>
                                     </div>
                                 </div>
-                            ))
-                        }
+                                <div className="icon-container"><i className="bi bi-gear editar-icon iconofoto" onClick={handleEditarDescripcion}>Actualizar Descripcion</i></div>
+
+                            </>
+                        )}
                     </div>
-                    
                 </div>
-                    <div>
-                        <Footer />
-                    </div>
+                <h1 className="text-center mt-3">Mis Obras:</h1>
+                <div className="grid-gallery">
+                    {
+                        obras.map((obra, index) => (
+                            <div className="grid-gallery__item" key={index}>
+                                <img src={obra.imagen} className="grid-gallery__image" alt="imagen" onClick={() => navigate(`/detalle/${obra._id}`)} />
+                            </div>
+                        ))
+                    }
+                </div>
+
             </div>
-        );
-    }
-    
-    export default MisObras;
+            <div>
+                <Footer />
+            </div>
+        </div>
+    );
+}
+
+export default MisObras;

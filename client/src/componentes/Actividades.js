@@ -15,7 +15,7 @@ const Actividades = () => {
     var nueva = [];
     useEffect(() => {
         axios.get("http://localhost:8000/api/actividades")
-            .then(res => { setActividades(res.data) })
+            .then(res => { setActividades(res.data); setActividadesImprimir(res.data); })
             .catch(err => console.log(err));
         axios.get("http://localhost:8000/api/onsesion", { withCredentials: true })
             .then(res => { setCreador(res.data._id) })
@@ -42,7 +42,10 @@ const Actividades = () => {
         lista = actividades;
         nueva = [];
         for (let i = 0; i < actividades.length; i++) {
-            if (pretipo === "Todas") {
+            if(pretipo === "DEFAULT"){
+                nueva = actividades;
+            }
+            else if (pretipo === "Todas") {
                 nueva = actividades;
             }
             else if (pretipo === actividades[i].tipo) {

@@ -51,7 +51,6 @@ const AcercaDe = () => {
           <DesarrolladorasDos />
           <DesarrolladorasTres />
           <DesarrolladorasCuatro />
-          <DesarrolladorasCinco />
           <DesarrolladorasSeis />
         </Carousel>
       </div>

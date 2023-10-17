@@ -41,8 +41,7 @@ module.exports.actualizar = (req, res) => {
 }
 
 module.exports.borrar = (req, res) => {
-    usertoken_decoded = jwt.verify(req.cookies.usertoken, secret_key);
-    Proyecto.deleteOne({ creador: usertoken_decoded._id }, { _id: req.params.id }).collation({ locale: "en" })
+    Proyecto.deleteOne({ _id: req.params.id })
         .then(result => res.json(result))
         .catch(err => {
             res.status(400).json(err);
@@ -50,7 +49,8 @@ module.exports.borrar = (req, res) => {
 }
 
 /*usertoken_decoded = jwt.verify(req.cookies.usertoken, secret_key);
-{creador:usertoken_decoded._id},*/
+{creador:usertoken_decoded._id},
+{ creador: usertoken_decoded._id }, */
 
 //MIS OBRAS
 
