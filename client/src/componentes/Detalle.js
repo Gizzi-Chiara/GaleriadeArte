@@ -63,7 +63,7 @@ const Detalle = () => {
                             <p>Fecha: {obras.fecha}</p>
                             <p>Categoría: {obras.categoria}</p>
                             <div className="botones">
-                                <Link to="/" className="btn btn-outline-info">Regresar</Link>
+                                <Link to="/principal" className="btn btn-outline-info">Regresar</Link>
                                 <div className="d-flex likes">
                                     {
                                         like ? <BsBalloonHeartFill size={36} className="text-danger" onClick={likes} /> : <BsBalloonHeart size={36} onClick={likes} />

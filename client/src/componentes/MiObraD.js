@@ -33,7 +33,7 @@ const MiObraD = () => {
     const borrarObra = id =>{
         axios.delete("http://localhost:8000/api/borrar/obra/" + id, {withCredentials:true})
             .then(res => {
-                let nuevaLista = obras.filter(obras._id !== id); //Sale que algo type error
+                let nuevaLista = obras.filter(obra => obra._id !== id); //Sale que algo type error
                 setObras(nuevaLista);
             })
             .catch( err => {
