@@ -6,7 +6,7 @@ import PinImagen from './imagenes/wing.png';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import logo from './logo/logo.png';
 import Footer from './Footer';
-import { set } from 'mongoose';
+import { uploadFile } from "../credenciales/firebase";
 
 const ActualizarActividad = () => {
     const [actividad, setActividad] = useState("");
@@ -33,10 +33,12 @@ const ActualizarActividad = () => {
 
     const navigate = useNavigate();
 
+    const [archivo, setArchivo] = useState(null);
+
     const [errors, setErrors] = useState({});
 
     const [ano, setAno] = useState(new Date().getFullYear());
-    const [mes, setMes] = useState((new Date().getMonth()+1));
+    const [mes, setMes] = useState((new Date().getMonth() + 1));
     const [dia, setDia] = useState(new Date().getDate());
 
     var laIncome = 0;
@@ -59,8 +61,8 @@ const ActualizarActividad = () => {
                 setPaginaweb(res.data.paginaweb);
                 setLat(res.data.lat);
                 setLong(res.data.long)
-                if (mes < 10){
-                    setMes("0"+mes.toString)
+                if (mes < 10) {
+                    setMes("0" + mes.toString)
                 } else {
                     setMes(mes);
                 }
@@ -94,12 +96,16 @@ const ActualizarActividad = () => {
         setLongShow(null);
     }
 
-    const actualizar = (e) => {
+    const actualizar = async (e) => {
         e.preventDefault();
+        const result = await uploadFile(archivo);
+        console.log(result)
+        setImagen(result);
+        console.log(imagen)
         axios.put("http://localhost:8000/api/actividades/" + id, {
             actividad,
             organizador,
-            imagen,
+            imagen: result,
             descripcion,
             horario,
             fecha,
@@ -146,7 +152,7 @@ const ActualizarActividad = () => {
                                 </div>
                                 <div>
                                     <label className='izq_label'>Imagen:</label>
-                                    <input type="text" className='input' id="imagen" value={imagen} onChange={e => setImagen(e.target.value)} />
+                                    <input className="form-control archivo mb-3 input" type="file" id="file" onChange={e => setArchivo(e.target.files[0])} />
                                     {errors.imagen ? <span>{errors.imagen.message}</span> : null}
                                 </div>
                                 <div>
@@ -204,6 +210,7 @@ const ActualizarActividad = () => {
                                 <div>
                                     <div>
                                         <div className='map_crear'>
+                                            <label>Haz doble click en la ubicación y guarda el pin:</label>
                                             <Map
                                                 mapboxAccessToken='pk.eyJ1IjoibW9uaWNhbHVjaWExOTk0IiwiYSI6ImNsbmkwNHVvczFiODkybG1zcmFoMXQ1eHIifQ.X4HfG7hokZo_mNBg3Dxs3Q'
                                                 {...viewState}
@@ -256,6 +263,7 @@ const ActualizarActividad = () => {
                                                 )}
                                             </Map>
                                             {errors.lat ? <span>{errors.lat.message}</span> : null}
+                                            <label className='label_map'>*Si te equivocas, cambia la ubicación y vuelve a guardar el pin</label>
                                         </div>
                                     </div>
                                 </div>

@@ -6,6 +6,7 @@ import PinImagen from './imagenes/wing.png';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import logo from './logo/logo.png';
 import Footer from "./Footer";
+import { uploadFile } from "../credenciales/firebase";
 
 const CrearActividad = () => {
     const [actividad, setActividad] = useState("");
@@ -28,12 +29,14 @@ const CrearActividad = () => {
 
     const [showPopup, setShowPopup] = useState(true);
 
+    const [archivo, setArchivo] = useState(null);
+
     const navigate = useNavigate();
 
     const [errors, setErrors] = useState({});
 
     const [ano, setAno] = useState(new Date().getFullYear());
-    const [mes, setMes] = useState((new Date().getMonth()+1));
+    const [mes, setMes] = useState((new Date().getMonth() + 1));
     const [dia, setDia] = useState(new Date().getDate());
 
     var laIncome = 0;
@@ -65,12 +68,16 @@ const CrearActividad = () => {
         setLongShow(null);
     }
 
-    const guardarActividad = (e) => {
+    const guardarActividad = async (e) => {
         e.preventDefault();
+        const result = await uploadFile(archivo);
+        console.log(result)
+        setImagen(result);
+        console.log(imagen)
         axios.post("http://localhost:8000/api/actividades", {
             actividad,
             organizador,
-            imagen,
+            imagen: result,
             descripcion,
             horario,
             fecha,
@@ -116,8 +123,10 @@ const CrearActividad = () => {
                                     {errors.organizador ? <span>{errors.organizador.message}</span> : null}
                                 </div>
                                 <div>
-                                    <label className='izq_label'>Imagen:</label>
-                                    <input type="text" className='input' id="imagen" value={imagen} onChange={e => setImagen(e.target.value)} />
+                                    <label>Imagen:</label>
+                                    <div>
+                                        <input className="form-control archivo mb-3 input" type="file" id="file" onChange={e => setArchivo(e.target.files[0])} />
+                                    </div>
                                     {errors.imagen ? <span>{errors.imagen.message}</span> : null}
                                 </div>
                                 <div>
@@ -175,6 +184,7 @@ const CrearActividad = () => {
                                 <div>
                                     <div>
                                         <div className='map_crear'>
+                                            <label>Haz doble click en la ubicación y guarda el pin:</label>
                                             <Map
                                                 mapboxAccessToken='pk.eyJ1IjoibW9uaWNhbHVjaWExOTk0IiwiYSI6ImNsbmkwNHVvczFiODkybG1zcmFoMXQ1eHIifQ.X4HfG7hokZo_mNBg3Dxs3Q'
                                                 {...viewState}
@@ -227,6 +237,7 @@ const CrearActividad = () => {
                                                 )}
                                             </Map>
                                             {errors.lat ? <span>{errors.lat.message}</span> : null}
+                                            <label className='label_map'>*Si te equivocas, cambia la ubicación y vuelve a guardar el pin</label>
                                         </div>
                                     </div>
                                 </div>

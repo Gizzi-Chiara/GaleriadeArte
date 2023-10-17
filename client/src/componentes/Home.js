@@ -5,6 +5,7 @@ import logo from './logo/logo.png'
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import Modal from "./Modal/Modal";
 
 const responsive = {
     superLargeDesktop: {
@@ -36,7 +37,7 @@ const Home = () => {
     }
 
     const logout = () => {
-        axios.get('http://localhost:8000/api/logout', {withCredentials:true})
+        axios.get('http://localhost:8000/api/logout', { withCredentials: true })
             .then(res => {
                 navigate("/login");
                 setCreador(null);
@@ -72,7 +73,7 @@ const Home = () => {
                         </ul>
                     </div>
                     {creador === null ? <button onClick={sesion} className="btn btn-light ms-3">Iniciar sesión</button> :
-                    <button onClick={logout} className="btn btn-light ms-3">Cerrar sesión</button>}
+                        <button onClick={logout} className="btn btn-light ms-3">Cerrar sesión</button>}
                 </div>
             </nav>
             <div className="p-5 mt-5 carr">
@@ -126,6 +127,9 @@ const Home = () => {
                         </div>
                     </div>
                 </Carousel>
+            </div>
+            <div>
+                <Modal />
             </div>
         </div>
     );

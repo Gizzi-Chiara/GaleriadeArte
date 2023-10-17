@@ -22,7 +22,6 @@
     bottom: 80px;
   }
   
-  
   .modal-card {
     position: fixed;
     right: 145px;
@@ -32,4 +31,9 @@
     width: 300px;
     height: 300px;
     border-radius: 5px;
+  }
+
+  .modal-background{
+    z-index: 1000;
+    position: absolute
   }

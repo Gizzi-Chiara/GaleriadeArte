@@ -646,6 +646,8 @@ span {
 
 .ver_img{
   width: 350px;
+  max-height: 200px;
+  object-fit: cover;
 }
 
 .mapa_ver{
@@ -708,4 +710,8 @@ span {
 .btn_borrar1{
   flex: 1.5;
   text-align: center;
+}
+
+.label_map{
+  font-size: 13px;
 }

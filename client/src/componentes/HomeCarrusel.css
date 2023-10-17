@@ -76,3 +76,18 @@
     flex-direction: column;
     padding: 20px;
 }
+
+.nextArrowBtn{
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    right: 0;
+    color: #BFAFB2;
+}
+.prevArrowBtn{
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 0;
+    color: #BFAFB2;
+}
