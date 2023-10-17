@@ -22,7 +22,7 @@ const Login = () => {
                     //Si hay algun error
                     setErrors(res.data.message);
                 } else{
-                    navigate("/principal");
+                    navigate("/home");
                 }
             })
             .catch(err => console.log(err));

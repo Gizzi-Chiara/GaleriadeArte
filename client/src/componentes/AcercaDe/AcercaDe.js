@@ -36,7 +36,7 @@ const AcercaDe = () => {
       <div className="cuerpo">
       <div className="top_acerca">
           <h1 className="titulo">Acerca de</h1>
-          <Link to={"/principal"} className="pagprinc">Página Principal</Link>
+          <Link to={"/home"} className="pagprinc">Página Principal</Link>
       </div>
         <div className="contenido">
           <p> <br></br>Nuestra página es un emocionante rincón virtual en donde la creatividad florece y el arte cobra vida. Nuestra plataforma ha sido diseñada con pasión por el arte, cuyo objetivo es el brindar un espacio acogedor y enriquecedor para los amantes de la expresión visual.<br />  <br /> Aquí, te sumergirás en un mundo diverso de colores, formas y emociones, donde cada trazo cuenta una historia. Podrás encontrar desde ilustraciones hasta localización de museos y actividades realcionadas con el Arte.

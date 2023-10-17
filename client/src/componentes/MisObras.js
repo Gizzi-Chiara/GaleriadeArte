@@ -147,13 +147,13 @@ const MisObras = () => {
                                         <p className="card-text">{descripcion}</p>
                                     </div>
                                 </div>
-                                <div className="icon-container"><i className="bi bi-gear editar-icon iconofoto" onClick={handleEditarDescripcion}>Actualizar Descripcion</i></div>
+                                <div className="icon-container"><i className="bi bi-gear editar-icon iconofoto" onClick={handleEditarDescripcion}>Actualizar Descripción</i></div>
 
                             </>
                         )}
                     </div>
                 </div>
-                <h1 className="text-center mt-3">Mis Obras:</h1>
+                <h3 className="text-center mt-3">Mis Obras:</h3>
                 <div className="grid-gallery">
                     {
                         obras.map((obra, index) => (
@@ -163,7 +163,6 @@ const MisObras = () => {
                         ))
                     }
                 </div>
-
             </div>
             <div>
                 <Footer />
