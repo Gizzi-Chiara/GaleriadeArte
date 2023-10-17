@@ -26,7 +26,7 @@ const Actividades = () => {
                 }
             })
     }, [])
-//comentario
+    //comentario
     const borrarActividad = id => {
         axios.delete("http://localhost:8000/api/actividades/" + id)
             .then(res => {
@@ -42,7 +42,7 @@ const Actividades = () => {
         lista = actividades;
         nueva = [];
         for (let i = 0; i < actividades.length; i++) {
-            if(pretipo === "DEFAULT"){
+            if (pretipo === "DEFAULT") {
                 nueva = actividades;
             }
             else if (pretipo === "Todas") {
@@ -85,7 +85,7 @@ const Actividades = () => {
                             <option value="Pintura">Pintura</option>
                             <option value="Artresanías">Artesanías</option>
                             <option value="Teatro">Teatro</option>
-                            <option value="Tatoos">Tatoos</option>
+                            <option value="Tatoos">Tattoos</option>
                             <option value="Baile">Baile</option>
                             <option value="Varios">Varios</option>
                             <option value="Otro">Otro</option>
@@ -101,7 +101,7 @@ const Actividades = () => {
                                 <th className='columnas top'>Lugar</th>
                                 <th className='columnas top'>Horario</th>
                                 <th className='columnas top'>Fecha</th>
-                                <th  className='columnas top'></th>
+                                <th className='columnas top'></th>
                             </tr>
                         </thead>
                         <tbody className='tabla_content'>
@@ -113,14 +113,18 @@ const Actividades = () => {
                                         <td className='columnas'>{actividad.lugar}</td>
                                         <td className='columnas'>{actividad.horario}</td>
                                         <td className='columnas'>{actividad.fecha}</td>
-                                        <td className='columnas'>
-                                            <Link to={`/actividades/ver/${actividad._id}`} className='actividadesLink'>Ver</Link>
-                                            {actividad.creador === creador ?
+                                        <td className='columnas2'>
+                                            <div className='buttons'>
+                                                <Link to={`/actividades/ver/${actividad._id}`} className='actividadesLink btn_ver'>Ver</Link>
                                                 <div>
-                                                    <Link to={`/actividades/editar/${actividad._id}`} className='actividadesLink1'>Editar</Link>
-                                                    <button onClick={() => borrarActividad(actividad._id)} className='actividadesLink1'>Borrar</button>
-                                                </div> : null
-                                            }
+                                                    {actividad.creador === creador ?
+                                                        <div className='btn_borrar'>
+                                                            <button className='actividadesLink1 btn_borrar1'><Link to={`/actividades/editar/${actividad._id}`} className='actividadesLink1 btn_borrar1'>Editar</Link></button>
+                                                            <button onClick={() => borrarActividad(actividad._id)} className='actividadesLink1 btn_borrar1'>Borrar</button>
+                                                        </div> : null
+                                                    }
+                                                </div>
+                                            </div>
                                         </td>
                                     </tr>
                                 ))
@@ -129,7 +133,7 @@ const Actividades = () => {
                     </div>
                 </table>
             </div>
-            <Footer/>
+            <Footer />
         </div>
     )
 }

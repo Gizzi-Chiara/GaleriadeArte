@@ -172,7 +172,7 @@ const ActualizarActividad = () => {
                                         <option value="Pintura">Pintura</option>
                                         <option value="Artresanías">Artesanías</option>
                                         <option value="Teatro">Teatro</option>
-                                        <option value="Tatoos">Tatoos</option>
+                                        <option value="Tatoos">Tattoos</option>
                                         <option value="Baile">Baile</option>
                                         <option value="Varios">Varios</option>
                                         <option value="Otro">Otro</option>

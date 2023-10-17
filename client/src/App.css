@@ -371,7 +371,11 @@ footer p {
 }
 
 .columnas {
-  width: 16%;
+  width: 10%;
+}
+
+.columnas2{
+  width: 10%;
 }
 
 .columna_a {
@@ -679,4 +683,29 @@ span {
 
 .check2{
   width: 18px;
+}
+
+.buttons{
+  display: flex;
+  flex-direction: column;
+}
+
+.btn_ver{
+  width: 100%;
+  height: auto;
+  flex: 1.5;
+  align-items: center;
+  text-align: center;
+}
+
+.btn_borrar{
+  display: flex;
+  justify-content: space-around;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.btn_borrar1{
+  flex: 1.5;
+  text-align: center;
 }
