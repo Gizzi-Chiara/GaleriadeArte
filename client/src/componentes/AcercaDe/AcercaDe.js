@@ -5,8 +5,8 @@ import DesarrolladorasUno from "./DesarrolladoraUno";
 import DesarrolladorasDos from "./DesarroladoraDos";
 import DesarrolladorasTres from "./DesarroladoraTres";
 import DesarrolladorasCuatro from "./DesarrolladoraCuatro";
-import DesarrolladorasCinco from "./DesarrolladoraCinco";
 import DesarrolladorasSeis from "./DesarrolladoraSeis";
+
 
 import "react-multi-carousel/lib/styles.css";
 import { Link } from "react-router-dom";
