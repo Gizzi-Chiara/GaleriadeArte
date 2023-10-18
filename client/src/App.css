@@ -115,6 +115,10 @@
   cursor: pointer;
 }
 
+.grid-gallery__item:hover{
+  filter: drop-shadow(0 0 10px rgba(243, 242, 228, 0.71));
+}
+
 /*MIS OBRAS*/
 .misObras {
   margin: 30px;
