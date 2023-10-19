@@ -49,7 +49,7 @@ const MiObraD = () => {
         <div>
             <Nav/>
             <div className="card text-light detalle">
-                <div className="row g-0">
+                <div className="row g-0 \">
                     <div className="col-md-4">
                         <img className="img-fluid" src={obras.imagen} alt="Obra"/>
                     </div>

@@ -12,7 +12,7 @@ const Chat = () => {
                 steps={[
                     {
                         id: 'bienvenido',
-                        message: 'Bienvenido a nuestra Galería de Arte!',
+                        message: '¡Bienvenido a nuestra Galería de Arte!',
                         trigger: '1'
                     },
                     {
@@ -27,7 +27,7 @@ const Chat = () => {
                     },
                     {
                         id: '3',
-                        message: 'Hola {previousValue}, gusto en conocerte!',
+                        message: 'Hola {previousValue}, ¡gusto en conocerte!',
                         trigger: '4'
                     },
                     {
@@ -44,12 +44,12 @@ const Chat = () => {
                     },
                     {
                         id: "6A",
-                        message: "Excelente! Buscas algo en particular?",
+                        message: "¡Excelente! ¿Buscas algo en particular?",
                         trigger: "seleccion"
                     },
                     {
                         id: "6B",
-                        message: "Lamento no poder ayudarte. Espero que vuelvas pronto",
+                        message: "Lamento no poder ayudarte. Espero que vuelvas pronto.",
                         end: true
                     },
                     {
@@ -89,12 +89,12 @@ const Chat = () => {
                     },
                     {
                         id: "9A",
-                        message: "Claro, que más te gustaría ver?",
+                        message: "Claro, ¿qué más te gustaría ver?",
                         trigger: "seleccion"
                     },
                     {
                         id: "9B",
-                        message: "Fue un gusto ayudarte, vuelve pronto!",
+                        message: "Fue un gusto ayudarte, ¡vuelve pronto!",
                         end: true
                     },
                 ]}

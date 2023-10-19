@@ -103,7 +103,7 @@ const CrearActividad = () => {
                         <h1>Crear Actividad</h1>
                         <ul className='link_actividades navbar-nav me-auto mb-2 mb-lg-0 ms-3 lista'>
                             <li className="nav-item">
-                                <Link to="/" className="nav-link active">Regresar</Link>
+                                <Link to="/actividades" className="nav-link active">Regresar</Link>
                             </li>
                         </ul>
                     </div>

@@ -125,7 +125,7 @@ const MisObras = () => {
             </div>
         </nav>
             <div className="container mt-5">
-                <div className="row">
+                <div className="row row1">
                     <div className="col-md-2">
                         {/* Espacio para la foto */}
                         {isAddingNewFoto ? (
