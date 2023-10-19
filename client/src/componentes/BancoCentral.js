@@ -10,7 +10,7 @@ const BancoCentral = () => {
 
     const [museo, setMuseo] = useState({
         museo: "Museos del Banco Central de Costa Rica",
-        tipo: "patrimonio arqueológico, numismático y artístico",
+        tipo: "Patrimonio arqueológico, numismático y artístico",
         encargado: "Banco Central de Costa Rica",
         imagen: "https://costaricacc.com/wp-content/uploads/2019/05/Los-Museos-del-Banco-Central-de-Costa-Rica.jpg",
         horario: "Todos los días de 9:15 a.m. a 5:00 p.m.",

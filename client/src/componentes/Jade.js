@@ -10,7 +10,7 @@ const Jade = () => {
 
     const [museo, setMuseo] = useState({
         museo: "Museo del Jade y de la Cultura Precolombina",
-        tipo: "patrimonio arqueológico",
+        tipo: "Patrimonio arqueológico",
         encargado: "INS",
         imagen: "https://3.bp.blogspot.com/-jwpUeM5IaYE/UaaHI7tQk7I/AAAAAAAAAmE/NUtb7mmaSww/s1600/JADE+010.jpg",
         horario: "De lunes a domingo de 8:00 a.m. a 5:00 p.m.",

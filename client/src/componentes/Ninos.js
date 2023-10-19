@@ -10,7 +10,7 @@ const Ninos = () => {
 
     const [museo, setMuseo] = useState({
         museo: "Museo de los Niños",
-        tipo: "ciencia/interactivo",
+        tipo: "Ciencia/interactivo",
         encargado:"Centro Costarricense de Ciencia y Cultura",
         imagen: "https://elmundo.cr/wp-content/uploads/2018/10/IMG_0480-1024x683.jpg",
         horario:"Época lectiva: martes a viernes, 8:00 a.m. a 4:30 p.m. Sábado y domingo 9:30 a.m. a 5:00 p.m. // Vacaciones: lunes a domingo: 9:30 a.m. a 5:00 p.m. ",

@@ -519,7 +519,13 @@ span {
 .columnas-museos-descripcion{
   width: 45%;
   padding: 20px;
+  text-align: justify;
 }
+
+.horario{
+  text-align: justify;
+}
+
 .columnas-museos-lugar{
   width: 15%;
   padding: 20px;
