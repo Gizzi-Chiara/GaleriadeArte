@@ -32,7 +32,7 @@ const Principal = () => {
                     <img src="https://wallpapercrafter.com/th8006/1692032-digital-painting-landscape-night-sky-clouds-animals.jpg" className="card-img principal" alt="Animals BisBiswas" />
                     <div className="card-img-overlay">
                         <h3 className="card-title">Bienvenidos a Galería de Arte</h3>
-                        <p className="card-text">Buscas una categoría en especifico?</p>
+                        <p className="card-text">¿Buscas una categoría en especifico?</p>
                         <p className="card-text"><small>Pintura | Dibujo | Grabado | Diseño 3D | Diseño Digital | Fotografía | Animación | Tatuaje</small></p>
                         <div>
                             <input type="text" className="w-25 buscador" placeholder="Buscar categoría" value={filtro} onChange={e => setFiltro(e.target.value)} />
